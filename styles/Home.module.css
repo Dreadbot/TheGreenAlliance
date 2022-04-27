@@ -28,6 +28,10 @@
   flex-grow: 1;
 }
 
+.title em {
+    color: #74d425;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
