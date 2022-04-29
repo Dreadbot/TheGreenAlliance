@@ -26,3 +26,14 @@ const NavigationBar = ({ icon, pages }: NavigationBarProps) => {
 }
 
 export default NavigationBar
+
+export const NavigationConstant = () => {
+    return(
+      <NavigationBar icon={require("../public/eye.svg")} 
+              pages={[
+                {title: "Home", route: "/"},
+                {title: "About", route: "/about"},
+                {title: "Landing", route: "/landingpage"}
+      ]}/>
+    )
+}
