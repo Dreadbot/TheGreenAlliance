@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Landing.module.scss'
+import { NavigationConstant } from "../components/NavigationBar";
 
 const Landing:NextPage = () => {
     return (
@@ -12,6 +13,7 @@ const Landing:NextPage = () => {
             </Head>
 
             <main className={styles.main}>
+                 <NavigationConstant />
                 <h1 className={styles.welcome}>The <em>Landing Page</em></h1>
             </main>
         </div>

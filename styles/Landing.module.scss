@@ -16,10 +16,19 @@
     font-size: 2em;
     text-align: center;
 }
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+}
 .welcome em {
     color: #6ac421;
     text-decoration: underline rgba(0,0,0,0);
-    transition: 0.3s
+    transition: 0.3s;
+    animation: 1s slideInFromLeft;
 }
 .welcome em:hover {
     color: #6ac421d3;
