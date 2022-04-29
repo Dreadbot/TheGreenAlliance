@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    oader: 'imgix',
+    path: '/',
+  },
   reactStrictMode: true,
   exportPathMap: async function(
     defaultPathMap,
@@ -8,10 +12,6 @@ const nextConfig = {
     return {
       '/': { page: '/' }
     }
-  },
-  images: {
-    oader: 'imgix',
-    path: '/',
   },
 }
 
