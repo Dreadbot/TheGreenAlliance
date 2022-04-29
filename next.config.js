@@ -10,9 +10,9 @@ const nextConfig = {
     }
   },
   images: {
-    oader: 'akamai',
-    path: '/'
-  }
+    oader: 'imgix',
+    path: '/',
+  },
 }
 
 module.exports = nextConfig
