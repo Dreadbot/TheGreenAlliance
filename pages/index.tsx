@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import NavigationBar from '../components/NavigationBar'
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
@@ -13,6 +14,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <NavigationBar icon={require("../public/eye.svg")} 
+          pages={[
+            {title: "Home", route: "/"},
+            {title: "Home2", route: "/"}
+          ]}/>
         <h1 className={styles.title}>
             Welcome to <em>The Green Alliance</em>!
         </h1>
