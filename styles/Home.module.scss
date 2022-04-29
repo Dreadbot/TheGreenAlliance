@@ -29,7 +29,7 @@
 }
 @keyframes slideInFromRight {
   0% {
-      transform: translateX(100%);
+      transform: translateX(-60%);
       opacity: 0;
     }
     100% {
@@ -49,16 +49,23 @@
 }
 .divider {
   margin-top: 10px;
-  height: 1vh;
-  width: 30%;
+  height: 0.25vh;
+  width: 25%;
   background-color: white;
   position: relative;
   border-radius: 10px;
   animation: 1s fadeIn;
 }
 .subtitle {
-  padding-top: 1%;
+  padding-top: 2.5%;
   font-size: 1.5rem;
   color: white;
+  animation: 1s slideInFromRight;
+}
+.bodytext{
+  padding-top: 1%;
+  font-size: 1em;
+  width: 40%;
+  text-align: center;
   animation: 1s slideInFromRight;
 }
