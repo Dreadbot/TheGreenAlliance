@@ -8,6 +8,10 @@ const nextConfig = {
     return {
       '/': { page: '/' }
     }
+  },
+  images: {
+    oader: 'akamai',
+    path: '/'
   }
 }
 
