@@ -13,6 +13,8 @@ const nextConfig = {
       '/': { page: '/' }
     }
   },
+  basePath: '/TheGreenAlliance',
+  assetPrefix: '/TheGreenAlliance',
 }
 
 module.exports = nextConfig
