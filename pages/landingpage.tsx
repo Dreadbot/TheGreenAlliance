@@ -14,7 +14,10 @@ const Landing:NextPage = () => {
 
             <main className={styles.main}>
                  <NavigationConstant />
-                <h1 className={styles.welcome}>The <em>Landing Page</em></h1>
+                 <h1 className={styles.welcome}>Welcome To</h1>
+                <h1 className={styles.title}>The Green Alliance</h1>
+                <div className={styles.divider}> </div>
+                <h2 className={styles.subtitle}>Hello</h2>
             </main>
         </div>
     )

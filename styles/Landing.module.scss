@@ -8,29 +8,39 @@
     display: flex;
     flex-direction: column;
     justify-content: top;
-    align-items: left;
+    align-items: center;
 }
+.title,
 .welcome {
+    color: white;
     margin: 0;
     line-height: 1.3;
     font-size: 2em;
     text-align: center;
+    animation: 1s slideInFromLeft;
 }
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);
+        opacity: 0;
       }
       100% {
         transform: translateX(0);
       }
 }
-.welcome em {
+.title {
     color: #6ac421;
-    text-decoration: underline rgba(0,0,0,0);
     transition: 0.3s;
-    animation: 1s slideInFromLeft;
 }
-.welcome em:hover {
-    color: #6ac421d3;
-    text-decoration: underline rgba(0,255,0,0.5);
+.divider {
+    margin-top: 10px;
+    height: 1vh;
+    width: 30%;
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+}
+.subtitle {
+    padding-top: 1%;
+    font-size: 1.5rem
 }
