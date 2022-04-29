@@ -4,8 +4,8 @@ const nextConfig = {
     loader: 'akamai',
     path: '/',
   },
-  // basePath: '/TheGreenAlliance',
-  // assetPrefix: '/TheGreenAlliance',
+  basePath: '/TheGreenAlliance',
+  assetPrefix: '/TheGreenAlliance',
 }
 
 module.exports = nextConfig
