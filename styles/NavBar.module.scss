@@ -6,7 +6,7 @@
     left: 0;
     // height: 100px;
     width: 100%;
-    background-color: colors.$bg;
+    background-color: colors.$nav;
 }
 
 .list {
@@ -20,6 +20,11 @@
 .icon {
     margin-left: 16px;
     margin-right: 16px;
+}
+
+.icon a {
+    width: 100%;
+    height: 100%;
 }
 
 .route {
