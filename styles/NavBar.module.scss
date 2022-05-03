@@ -4,7 +4,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    // height: 100px;
     width: 100%;
     background-color: colors.$nav;
 }
@@ -28,7 +27,11 @@
 }
 
 .route {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 160px;
+    border-style: solid;
+    border-color: colors.$nav-border;
 }
 
 .route a {
@@ -44,5 +47,3 @@
     background-color: colors.$gr-dark;
     transition-duration: 500ms;
 }
-
-
