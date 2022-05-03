@@ -1,0 +1,43 @@
+@use 'colors';
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    // height: 100px;
+    width: 100%;
+    background-color: colors.$bg;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.route {
+    width: 160px;
+}
+
+.route a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.route a:hover {
+    transition-property: all;
+    background-color: colors.$gr-dark;
+    transition-duration: 500ms;
+}
+
+

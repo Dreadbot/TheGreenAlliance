@@ -1,14 +1,16 @@
 .container {
   padding: 0.2rem;
 }
+
 .main {
-  padding: 4rem 0;
+  margin-top: 100px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: center;
 }
+
 .title,
 .welcome {
   color: white;
@@ -52,7 +54,7 @@
   height: 0.25vh;
   width: 25%;
   background-color: white;
-  position: relative;
+  // position: relative;
   border-radius: 10px;
   animation: 1s fadeIn;
 }
