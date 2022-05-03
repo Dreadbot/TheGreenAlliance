@@ -1,4 +1,5 @@
 import Image from "next/image"
+import styles from "../styles/NavBar.module.scss"
 
 type NavigationBarProps = {
     icon: string,
@@ -10,13 +11,13 @@ type NavigationBarProps = {
 
 const NavigationBar = ({ icon, pages }: NavigationBarProps) => {
     return (
-        <div className="fixed top-0 left-0 w-full">
-            <ul className="flex">
-                <li className="mx-4"><Image src={icon} width="50px" height="50px"/></li>
+        <div className={styles.container}>
+            <ul className={styles.list}>
+                <li className={styles.icon}><Image src={icon} width="50px" height="50px"/></li>
                 {pages.map((page) => {
                     return (
-                        <li key={page.title} className="w-40">
-                            <a href={page.route} className="flex h-full w-full justify-center items-center hover:bg-gr-dark transition-colors duration-500">{page.title}</a>
+                        <li key={page.title} className={styles.route}>
+                            <a href={page.route}>{page.title}</a>
                         </li>
                     )
                 })}
