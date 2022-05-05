@@ -37,6 +37,7 @@ export const NavigationConstant = () => {
       <NavigationBar icon={require("../public/eye.svg")} 
               pages={[
                 {title: "Home", route: "/"},
+                {title: "Articles", route: "/articles"},
                 {title: "About", route: "/about"},
       ]}/>
     )

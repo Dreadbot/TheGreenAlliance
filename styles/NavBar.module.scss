@@ -40,10 +40,9 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    transition: background-color 500ms ease-in-out;
 }
 
 .route a:hover {
-    transition-property: all;
     background-color: colors.$gr-dark;
-    transition-duration: 500ms;
 }
