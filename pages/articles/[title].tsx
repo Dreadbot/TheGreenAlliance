@@ -13,15 +13,22 @@ type ArticleType = {
 }
 
 const Article = ( { article }: ArticleType ) => {
-
     return (
-        <div className={styles.container}>
+        <div className={styles.container} >
             <NavigationConstant />
-            {article == null ? null : (
-                <p>{article.text}</p>
-            )}
+            <div dangerouslySetInnerHTML={getArticleHtml(article)}/>
         </div>
     )
+}
+
+const getArticleHtml = (article: { title: string; text: any; }) => {
+    const showdown = require('showdown')
+    const converter = new showdown.Converter()
+    return article != null ? {
+        __html: converter.makeHtml(article.text)
+    } : {
+        __html: "<h1>NA</h1>"
+    }
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -49,7 +56,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export const getStaticPaths: GetStaticPaths<{ title: string }> = async () => {
-
     return {
         paths: [],
         fallback: 'blocking'
