@@ -16,7 +16,7 @@ const About: NextPage = () => {
                 <h1 className={styles.title}>About Us</h1>
                 <p className={styles.text}>
                     The Green Alliance is a Service and Outreach project, started and maintained by Team 3656's Vision subteam. Its goal is 
-                    to provide resources for implementing vision systems for your First team's robot.
+                    to provide resources for implementing vision systems for your FIRST team's robot.
                 </p>
             </main>
         </div>

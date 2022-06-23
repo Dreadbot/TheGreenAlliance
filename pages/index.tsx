@@ -19,12 +19,12 @@ const Home: NextPage = () => {
         <h2 className={styles.subtitle}>Our Mission</h2>
         <div className={styles.divider}> </div>
         <p className={styles.bodytext}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum. Lacus sed viverra tellus in. Vulputate ut pharetra sit amet aliquam id diam maecenas. Fames ac turpis egestas maecenas pharetra convallis posuere. Ultrices gravida dictum fusce ut placerat orci. Morbi blandit cursus risus temper advaces
+          Our mission is to provide beginner friendly, easy to implement documentation and articles to help you implement hand written vision into your FIRST team's robot
         </p>
         <h2 className={styles.subtitle}>What you need</h2>
         <div className={styles.divider}> </div>
         <p className={styles.bodytext}>
-          Non consectetur a erat nam at lectus. Auctor urna nunc id cursus. Mauris ultrices eros in cursus turpis massa. Vel turpis nunc eget lorem. Lectus proin nibh nisl condimentum id. Pellentesque id nibh tortor id aliquet. Lorem ipsum dolor sit amet. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra. Volutpat commodo sed egestas egestas. Aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. Rutrum quisque non tellus orci. Urna id volutpat lacus laoreet. In nulla posuere sollicitudin aliquam ultrices sagittis orci.
+          To get started, we reccomend a webcam (anything around 720p or above will do), and a computer with python and an IDE of your choice to write it in.
         </p>
       </main>
     </div>
