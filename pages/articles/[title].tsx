@@ -14,20 +14,22 @@ const Article = ( { article }: ArticleType ) => {
     return (
         <div className={styles.container} >
             <NavigationConstant />
-            <div dangerouslySetInnerHTML={getArticleHtml(article)}/>
+	    {!getArticleHtml(article) ? 
+		<div className={styles.notFound}>
+		    <h1>Oops! There's no article with that title.</h1> 
+		</div> : 
+		<div dangerouslySetInnerHTML={getArticleHtml(article)!}/>
+	    }
         </div>
     )
 }
 
 const getArticleHtml = (article: { title: string; text: string; }) => {
-    if(!article) return {
-	__html: "<h1>NA</h1>"
-    }
+    if(!article) return null
 
     const showdown = require('showdown')
     const converter = new showdown.Converter()
     const text = article.text
-    console.log(text)
 
     return {
         __html: converter.makeHtml(text)
