@@ -20,15 +20,19 @@ const Article = ( { article }: ArticleType ) => {
 }
 
 const getArticleHtml = (article: { title: string; text: string; }) => {
+    if(!article) return {
+	__html: "<h1>NA</h1>"
+    }
+
     const showdown = require('showdown')
     const converter = new showdown.Converter()
     const text = article.text
     console.log(text)
-    return article != null ? {
+
+    return {
         __html: converter.makeHtml(text)
-    } : {
-        __html: "<h1>NA</h1>"
     }
+   
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
