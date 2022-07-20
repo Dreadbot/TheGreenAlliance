@@ -24,7 +24,7 @@ const Article = ( { article }: ArticleType ) => {
     )
 }
 
-const getArticleHtml = (article: { title: string; text: string; }) => {
+const getArticleHtml = (article: { title: string, text: string }) => {
     if(!article) return null
 
     const showdown = require('showdown')

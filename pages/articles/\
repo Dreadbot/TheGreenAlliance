@@ -13,7 +13,9 @@ const ArticleHome = ({ articles }: ArticleHomeType) => {
 	    <ul>
 		{articles.map(title => {
 		    console.log(title)
-		    return <li><a href={`/articles/${title}`}>{title}</a></li> 
+		    return <li>
+			<a href={`/`}>EEEE</a>
+		    </li> 
 		})}
 		<li><a href="/">Among Us</a></li>
 	    </ul>
