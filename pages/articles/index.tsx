@@ -1,6 +1,7 @@
 import { NavigationConstant } from "../../components/NavigationBar";
 import { GetServerSideProps } from "next";
 import { MongoClient } from 'mongodb';
+import styles from "../../styles/ArticleHome.module.scss";
 
 type ArticleHomeType = {
     articles: string[]
@@ -8,14 +9,12 @@ type ArticleHomeType = {
 
 const ArticleHome = ({ articles }: ArticleHomeType) => {
     return (
-        <div>
+        <div className={styles.container}>
             <NavigationConstant />
 	    <ul>
 		{articles.map(title => {
-		    console.log(title)
-		    return <li><a href={`/articles/${title}`}>{title}</a></li> 
+		    return <li><a href={`/articles/${title}`}>{title}</a></li>
 		})}
-		<li><a href="/">Among Us</a></li>
 	    </ul>
         </div>
     )
