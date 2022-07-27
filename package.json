@@ -1,0 +1,25 @@
+{
+  "name": "thegreenalliance-uploader",
+  "version": "1.0.0",
+  "description": "Uploads files as articles into the database.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dreadbot/TheGreenAlliance.git"
+  },
+  "author": "3656 Vision",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dreadbot/TheGreenAlliance/issues"
+  },
+  "homepage": "https://github.com/Dreadbot/TheGreenAlliance#readme",
+  "dependencies": {
+    "@types/mongodb": "^4.0.7",
+    "mongodb": "^4.8.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
