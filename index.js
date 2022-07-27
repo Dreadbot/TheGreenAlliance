@@ -66,7 +66,7 @@ async function main() {
         await collection.insertOne({
             title: await title,
             text: await content,
-        }).then(_ => client.close());
+        }).then(_ => { client.close(); process.exit(0); });
     });
 }
 main();
