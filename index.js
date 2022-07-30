@@ -54,7 +54,7 @@ let title = filepath.then(value => {
 });
 let content = title.then(value => {
     new Promise(async (resolve) => {
-        let file = fs.open(path.join(__dirname, await filepath));
+        let file = fs.open(path.join(process.cwd(), await filepath));
         return (await file).read();
     });
 });
