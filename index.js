@@ -59,7 +59,7 @@ let content = title.then(value => {
     });
 });
 async function main() {
-    let content = fs.readFile(path.join(__dirname, await filepath), { encoding: 'utf-8' });
+    let content = fs.readFile(path.join(process.cwd(), await filepath), { encoding: 'utf-8' });
     const client = new mongodb_1.MongoClient(await uri, { serverApi: mongodb_1.ServerApiVersion.v1 });
     client.connect(async (err) => {
         const collection = client.db("thegreenalliance").collection("articles");
