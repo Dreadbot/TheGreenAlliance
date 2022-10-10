@@ -36,8 +36,3 @@ while True:
 ```
 
 Now we have a window that shows the video from your camera. From there, a majority of what we do can be graphically represented by drawing over this video.
-
-Previous article : [[Getting started with OpenCV in Python]]
-Next article : [[Color Space Conversion]]
-
-#OpenCV

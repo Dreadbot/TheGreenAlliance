@@ -16,9 +16,3 @@ This results in an image where we can effectively isolate the colour we are look
 ![[element 1.jpg]]
 
 In this example we use a range of (0,100,100) to (100,255,255) to only get the yellow pixels, since yellow is made up of Red and Green, and the highest value the Blue can be to be considered valid is only 100
-
-Previous Article : [[Modifying our source]]
-Next Article : [[Erosion and Dilation]]
-
-
-#OpenCV 

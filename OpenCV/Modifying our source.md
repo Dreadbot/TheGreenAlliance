@@ -34,8 +34,3 @@ while True:
 ![[imgBlur 1.jpg]]
 
 This image will be much easier to work with.
-
-Previous Article : [[Color Space Conversion]]
-Next Article : [[Masking out what we dont need]]
-
-#OpenCV 

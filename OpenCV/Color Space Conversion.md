@@ -24,17 +24,9 @@ while True:
 ```
 
 **<u>Standard Image</u>**
-![[Stock.jpg]]
 
 **<u>RGB Image</u>**
-![[imgRGB.jpg]]
 
 **<u>HLS Image</u>**
-![[imgHLS.jpg]]
 
 While initially weird looking, the HLS version is easier for us to work with. This is due to the fact that it is closer to how the human eye sees colour. 
-
-Previous Article : [[Your First OpenCV Program]]
-Next Article : [[Modifying our source]]
-
-#OpenCV 

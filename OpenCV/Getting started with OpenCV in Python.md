@@ -9,8 +9,3 @@ import cv2
 ```
 
 Thats all you have to do, like other pip libraries its just install, and import.
-
-Previous Article : [[Intro to OpenCV]]
-Next Article : [[Your First OpenCV Program]]
-
-#OpenCV 

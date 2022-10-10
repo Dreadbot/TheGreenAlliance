@@ -2,8 +2,6 @@
 The final steps we need to do to get a good image will be to clean up any straggling pixels we have around the edges. While our main section of our image might be pretty good, because we are looking for certain colors there are often little straggler pixels.
 
 Ive added some dots of the same color as the ball to the edges and remasked it 
-![[2020-2021-Power-Cell-For-Erosion.jpg]]
-![[element-with-leaking 1.jpg]]
 
 A real world example of this problem would be ceiling lights in the background while we are searching for a signal light or a blue hat in the background when we are searching for a blue ball.
 
@@ -30,8 +28,3 @@ while True:
 	if cv2.waitKey(1) == ord('q'):
 		break
 ```
-![[element-eroded.jpg]]
-
-Previous Article : [[Masking out what we dont need]]
-
-#OpenCV 
