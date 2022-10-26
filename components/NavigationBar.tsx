@@ -13,7 +13,11 @@ const NavigationBar = ({ icon, pages }: NavigationBarProps) => {
     return (
         <div className={styles.container}>
             <ul className={styles.list}>
-                <li className={styles.icon}><Image src={icon} width="50px" height="50px"/></li>
+                <li className={styles.icon}>
+                    <a href="/">
+                        <Image src={icon} width="60px" height="60px" />
+                    </a>
+                </li>
                 {pages.map((page) => {
                     return (
                         <li key={page.title} className={styles.route}>
@@ -33,6 +37,7 @@ export const NavigationConstant = () => {
       <NavigationBar icon={require("../public/eye.svg")} 
               pages={[
                 {title: "Home", route: "/"},
+                {title: "Articles", route: "/articles"},
                 {title: "About", route: "/about"},
       ]}/>
     )
