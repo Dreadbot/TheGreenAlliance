@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { NavigationConstant } from "../components/NavigationBar";
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
@@ -12,7 +11,6 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <NavigationConstant />
         <h1 className={styles.welcome}>Welcome To</h1>
         <h1 className={styles.title}>The Green Alliance</h1>
         <h2 className={styles.subtitle}>Our Mission</h2>

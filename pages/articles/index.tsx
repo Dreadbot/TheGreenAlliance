@@ -1,53 +1,17 @@
-import { NavigationConstant } from "../../components/NavigationBar";
-import { GetServerSideProps } from "next";
-import { MongoClient } from 'mongodb';
-import styles from "../../styles/ArticleHome.module.scss";
+import { NextPage } from 'next';
+import Head from 'next/head';
+import { NavigationConstant } from '../../components/NavigationBar';
+import styles from '../../styles/ArticleHome.module.scss';
 
-type ArticleHomeType = {
-    articles: string[]
-}
-
-const ArticleHome = ({ articles }: ArticleHomeType) => {
+const Articles: NextPage = () => {
     return (
         <div className={styles.container}>
-            <NavigationConstant />
-	    <ul>
-		{articles.map(title => {
-		    return <li><a href={`/articles/${title}`}>{title}</a></li>
-		})}
-	    </ul>
+            <main>
+                <NavigationConstant/>
+                <h1>Articles</h1>
+            </main>
         </div>
-    )
+    );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-    const file = require("../../private/mongo.json")
-    const url = `mongodb+srv://${file.username}:${file.password}@thegreenalliance.5xwjk.mongodb.net/thegreenalliance?retryWrites=true&w=majority`
-    const client = await MongoClient.connect(url)
-    const articles = client.db().collection("articles")
-
-    let articleTitles: string[] = []
-
-    await articles.find().toArray().then((docs) => {
-	docs.forEach(doc => {
-	    articleTitles.push(doc.title)
-	})
-    })
-
-    client.close()
-
-    console.log(articleTitles)
-    
-    return articles != null ? {
-        props: {
-            articles: articleTitles
-        }
-    } : {
-        props: {
-            articles: null
-        }
-    }
-}
-
-
-export default ArticleHome
+export default Articles;
