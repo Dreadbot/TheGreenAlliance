@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <h2 className={styles.subtitle}>What you need</h2>
         <div className={styles.divider}> </div>
         <p className={styles.bodytext}>
-          To get started, we reccomend a webcam (anything around 720p or above will do), and a computer with python and an IDE of your choice to write it in.
+          To get started, we recommend a webcam (anything around 720p or above will do), and a computer with python and an IDE of your choice to write it in.
         </p>
       </main>
     </div>
