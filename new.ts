@@ -1,4 +1,4 @@
-import { writeFileSync, promises as fsPromises } from 'fs';
+import { writeFileSync } from 'fs';
 import { join } from 'path';
 import cli from 'command-line-args';
 
@@ -18,4 +18,3 @@ let file_contents =
 `;
 
 writeFileSync(join(__dirname, options.file), file_contents, {flag: 'w'});
-
