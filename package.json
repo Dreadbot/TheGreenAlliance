@@ -1,32 +1,28 @@
 {
-  "name": "thegreenalliance",
-  "version": "0.1.0",
-  "private": true,
+  "name": "thegreenalliance-article-manager",
+  "version": "1.0.0",
+  "description": "Provides utilities for writing articles for TGA",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "test": "ts-node index.ts",
+    "new": "ts-node new.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dreadbot/TheGreenAlliance.git"
+  },
+  "author": "",
+  "license": "CC-BY-NC-SA-2.0",
+  "bugs": {
+    "url": "https://github.com/Dreadbot/TheGreenAlliance/issues"
+  },
+  "homepage": "https://github.com/Dreadbot/TheGreenAlliance#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
   },
   "dependencies": {
-    "next": "12.1.5",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
-  },
-  "devDependencies": {
-    "@mdx-js/loader": "^2.1.1",
-    "@next/mdx": "^12.1.6",
-    "@types/node": "17.0.29",
-    "@types/react": "18.0.8",
-    "@types/react-dom": "18.0.0",
-    "@types/showdown": "^2.0.0",
-    "autoprefixer": "^10.4.5",
-    "eslint": "8.14.0",
-    "eslint-config-next": "12.1.5",
-    "mongodb": "^4.5.0",
-    "sass": "^1.51.0",
-    "showdown": "^2.1.0",
-    "typescript": "4.6.3"
+    "@types/command-line-args": "^5.2.0",
+    "command-line-args": "^5.2.1"
   }
 }
