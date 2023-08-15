@@ -125,9 +125,7 @@ cross-multiplying:
 $$
 \begin{gather}
 \frac{8 \textrm{ft}}{200 \textrm{px}} = \frac{d}{678 \textrm{px}} \\
-\\
 \frac{8 \textrm{ft} \times 678 \textrm{px}}{200 \textrm{px}} = d \\
-\\
 27.12 \textrm{ft} = d
 \end{gather}
 $$
