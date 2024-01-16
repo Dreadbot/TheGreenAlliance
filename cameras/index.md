@@ -12,7 +12,7 @@ not as complicated as it seems.
 
 ## Establishing the Type
 There are a couple of types of cameras, the main two that we'll focus on are
-fisheyes and pinholes. Generally, if your thinking of a camera, it's a pinhole.
+fisheyes and pinholes. Generally, if you're thinking of a camera, it's a pinhole.
 Fisheyes are a lot more complicated, and involve a heap of extra work before
 they can be processed with computer vision. For most computer vision purposes,
 especially in FRC robotics, pinhole cameras will be sufficient, and so that's 

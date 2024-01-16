@@ -29,7 +29,6 @@ core of our vision systems:
   </defs>
   <rect x="0" y="0" width="855" height="730" fill="#ffffff"></rect><g stroke-linecap="round"><g transform="translate(117 252) rotate(0 0.43429060132996256 116.44584080015008)"><path d="M-0.6 -1 C-0.57 80.36, -0.43 158.41, 1.47 233.89 M0.54 0.05 C2.23 67.77, 0.61 136.5, -0.01 233.71" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(118 251) rotate(0 306.45729366429975 176.92197321180737)"><path d="M-0.1 0.29 C168.02 96.61, 338.15 194.68, 613.01 353.83 M0.21 0.02 C183.08 103.94, 365.92 209.59, 612.57 353.61" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(116.17249532404685 486.7961932772457) rotate(0 308.3420498414995 -178.0789559093807)"><path d="M0.13 -0.1 C174.25 -100.74, 350.48 -201.85, 616.24 -356.21 M0.21 0.05 C159.57 -90.66, 320.03 -183.54, 616.55 -355.56" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(732 131) rotate(0 0.19735522634437075 236.4690609646902)"><path d="M0.66 -0.86 C0.88 151.88, 1.67 303.16, -0.88 473.8 M0.36 0.15 C1.84 151.26, 1.26 301.82, 0.43 473.1" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(116 367.9999999999999) rotate(0 307.1720667123795 0.7575631385937527)"><path d="M0.59 0.71 C143.62 1.75, 286.95 0.71, 613.76 0.36" stroke="#000000" stroke-width="1.5" fill="none" stroke-dasharray="8 9"></path></g></g><mask></mask><g transform="translate(411 145) rotate(0 52 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Real World</text></g><g transform="translate(167 142) rotate(0 36 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Camera</text></g><g stroke-linecap="round"><g transform="translate(324 57) rotate(0 -0.18700544834143784 312.7600031137467)"><path d="M-0.72 0.35 C-0.71 136.13, -0.52 273.71, 0.35 625.17" stroke="#000000" stroke-width="1.5" fill="none" stroke-dasharray="8 9"></path></g></g><mask></mask><g transform="translate(157 337) rotate(0 5 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">f</text></g><g transform="translate(369 570) rotate(0 69 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">(not to scale)</text></g><g transform="translate(80 310) rotate(0 9.5 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">py</text></g>
 </svg>
-
 &nbsp;
 
 ## Interpreting the Triangles
@@ -123,11 +122,11 @@ height is 200 px, and the camera's focal length is 678 px. We can solve for $d$ 
 cross-multiplying:
 
 $$
-\begin{gather}
-\frac{8 \textrm{ft}}{200 \textrm{px}} = \frac{d}{678 \textrm{px}} \\
-\frac{8 \textrm{ft} \times 678 \textrm{px}}{200 \textrm{px}} = d \\
-27.12 \textrm{ft} = d
-\end{gather}
+\begin{split}
+\frac{8 \textrm{ft}}{200 \textrm{px}} &= \frac{d}{678 \textrm{px}} \\
+\frac{8 \textrm{ft} \times 678 \textrm{px}}{200 \textrm{px}} &= d \\
+27.12 \textrm{ft} &= d
+\end{split}
 $$
 
 It's as easy as that! No complicated trigonometry or linear algebra. Things get
