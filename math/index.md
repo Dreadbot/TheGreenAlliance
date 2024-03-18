@@ -3,7 +3,7 @@ label: Math
 order: 10
 icon: number
 ---
-# Maths
+# Math
 
 Without math, computer vision wouldn't exist. Though it may not be used to
 directly process the images, it forms the heart of the processing pipeline. It 
