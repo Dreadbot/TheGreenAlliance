@@ -1,6 +1,6 @@
 ---
 label: Cameras
-order: 00
+order: 10
 icon: device-camera
 ---
 # Cameras
