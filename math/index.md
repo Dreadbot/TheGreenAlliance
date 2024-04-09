@@ -1,6 +1,6 @@
 ---
 label: Math
-order: 10
+order: 20
 icon: number
 ---
 # Math
