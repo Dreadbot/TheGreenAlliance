@@ -1,6 +1,6 @@
 ---
 label: OpenCV
-order: 90
+order: 5
 icon: cpu
 ---
 !!!warning
