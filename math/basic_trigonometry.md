@@ -1,6 +1,6 @@
 ---
 label: Basic Trigonometry
-order: 00
+order: 90
 icon: diamond
 ---
 # Trigonometry
