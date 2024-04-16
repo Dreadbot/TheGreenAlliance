@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Contributors</title>
-    <meta name="title" content="Contributors">
-    <meta name="description" content="Bolded names are project leaders for that year.">
+    <title>Linear Algebra</title>
+    <meta name="title" content="Linear Algebra">
+    <meta name="description" content="Linear Algebra is an important tool that we use to help find the position of the robot on the field.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://thegreenalliance.dev/meta/contributors/">
+    <link rel="canonical" href="https://thegreenalliance.dev/math/linear_algebra/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thegreenalliance.dev/meta/contributors/">
-    <meta property="og:title" content="Contributors">
-    <meta property="og:description" content="Bolded names are project leaders for that year.">
+    <meta property="og:url" content="https://thegreenalliance.dev/math/linear_algebra/">
+    <meta property="og:title" content="Linear Algebra">
+    <meta property="og:description" content="Linear Algebra is an important tool that we use to help find the position of the robot on the field.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://thegreenalliance.dev/meta/contributors/">
-    <meta property="twitter:title" content="Contributors">
-    <meta property="twitter:description" content="Bolded names are project leaders for that year.">
+    <meta property="twitter:url" content="https://thegreenalliance.dev/math/linear_algebra/">
+    <meta property="twitter:title" content="Linear Algebra">
+    <meta property="twitter:description" content="Linear Algebra is an important tool that we use to help find the position of the robot on the field.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -35,6 +35,8 @@
     <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766543720577" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766543720577" data-turbo-eval="false" defer></script>
+    <link href="../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../resources/js/katex.js?v=3.5.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -153,18 +155,70 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="contributors" class="break-words">
+<doc-anchor-target id="linear-algebra" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contributors">#</doc-anchor-trigger>
-        <span>Contributors</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#linear-algebra">#</doc-anchor-trigger>
+        <span>Linear Algebra</span>
     </h1>
 </doc-anchor-target>
-<p>Bolded names are project leaders for that year.</p>
-<ul>
-<li>2022 (pre-launch): <strong>Cole Scheller</strong>, <strong>Calvin C Ophoff</strong>, <strong>Josh Fernandez</strong>, Rose Dray</li>
-<li>2023 (pre-launch): <strong>Calvin C Ophoff</strong>, Rose Dray</li>
-<li>2024 <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12.5 1.25a.75.75 0 0 0-1.5 0v8.69L6.447 5.385a.75.75 0 1 0-1.061 1.06L9.94 11H1.25a.75.75 0 0 0 0 1.5h8.69l-4.554 4.553a.75.75 0 0 0 1.06 1.061L11 13.561v8.689a.75.75 0 0 0 1.5 0v-8.69l4.553 4.554a.75.75 0 0 0 1.061-1.06L13.561 12.5h8.689a.75.75 0 0 0 0-1.5h-8.69l4.554-4.553a.75.75 0 1 0-1.06-1.061L12.5 9.939V1.25Z"/></g></g></svg> (launch): <strong>Calvin C Ophoff</strong>, Luke Baur, Fynn Nielsen, Arman Buyukbozkirlii</li>
-</ul>
+<p>Linear Algebra is an important tool that we use to help find the position of the robot on the field.</p>
+<doc-anchor-target id="vectors">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vectors">#</doc-anchor-trigger>
+        <span>Vectors</span>
+    </h2>
+</doc-anchor-target>
+<p>Vectors are used to represent a direction and magnitude. Usually they are graphically denoted by an arrow: the length represents the magnitude of the arrow and the starting and ending points represent the direction. On paper they are represent with square brackets [ ] with numbers vertically stacked. The top represents the x direction, below that is the y, and in 3 dimensions their will be z below that.</p>
+<div class="math"><pre>\left(\begin{array}
+10\\
+2
+\end{array}\right)</pre></div>
+<p>The above 2d vector represents an arrow with the x component being 10 units and the y component being two units, so you can imagine this as an arrow going from the point (0, 0) to the point (10, 2). In the context of robots, these vectors usually represent
+the position of something. For example, vectors are often used to represent where an april tag is from the camera.</p>
+<doc-anchor-target id="matrices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#matrices">#</doc-anchor-trigger>
+        <span>Matrices</span>
+    </h2>
+</doc-anchor-target>
+<p>In essence, matrices are a way to hold multiple pieces of information in a single entity.</p>
+<div class="math"><pre>\left(\begin{array}
+6 &amp; 2\\
+2 &amp; 1
+\end{array}\right)</pre></div>
+<p>Above is a two by two matrix. Graphically, however, representing them is a bit more complex.
+We generally think of matrices as transformations of the coordinate grid. Lets say we start with
+a vector</p>
+<div class="math"><pre>\left(\begin{array}
+a\\
+b
+\end{array}\right)</pre></div>
+<p>on the grid, but then we want to transform this vector using a matrix.</p>
+<div class="math"><pre>left(\begin{array}
+3 &amp; 6\\
+2 &amp; 4
+\end{array}\right)</pre></div>
+<p>Applying this transformation, we get the x component, a, multilying the first column, and the y component, b,
+multiplying the second component:</p>
+<div class="math"><pre>\left(\begin{array}
+3a\
+2a                   
+\end{array}\right)   </pre></div>
+<p>and</p>
+<div class="math"><pre>\left(\begin{array}
+6b\
+4b                   
+\end{array}\right)   </pre></div>
+<p>combining these into a single vector we get our result vector:</p>
+<div class="math"><pre>\left(\begin{array}
+3a + 6b\
+2a + 4b                 
+\end{array}\right)   </pre></div>
+<p>This multi-step proccess is more commonly described as matrix multiplication. However,
+matrix multiplication isn&#x27;t as simple as scalar multiplication, so you can&#x27;t just multiply
+the corresponding components. I won&#x27;t get into the details of matrx multiplication, but for
+more info on linear algebra and to get a much better visual representation of what has
+been explained in this article, I suggest watching <a href="https://youtu.be/fNk_zzaMoSs?si=iBkvwhzAhbwECNF0">this video series</a> on youtube.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -174,20 +228,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../meta/roadmap/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../math/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Roadmap</span>
+                                                <span class="block mt-1">Math</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../meta/version/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../math/basic_trigonometry/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Site Version</span>
+                                                <span class="block mt-1">Basic Trigonometry</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -231,6 +285,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Contributors", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Linear Algebra", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
