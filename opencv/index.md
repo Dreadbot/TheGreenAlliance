@@ -3,6 +3,10 @@ label: OpenCV
 order: 90
 icon: cpu
 ---
+!!!warning
+This section is a stub! Look out for more in a future update.
+!!!
+
 # What is OpenCV?
 OpenCV (Computer Vision) is a programming library that can help us achieve
 our goals when it comes to computer vision. As the name says, OpenCV
