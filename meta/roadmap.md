@@ -5,7 +5,7 @@ icon: project-roadmap
 ---
 # Roadmap
 
-- April 15, 2024: Preview of the Crescendo update (Launch/pre-ɣ v0.2.0)
+- April 15, 2024: Preview of the Crescendo update (Launch/pre-ɣ pre-v1.0.0)
 - May 1, 2024: Crescendo update (Launch/ɣ v1.0.0)
   - Linear Algebra
   - Apriltag articles
