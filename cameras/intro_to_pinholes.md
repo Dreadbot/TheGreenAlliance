@@ -11,7 +11,7 @@ the film. In digital cameras, it's a little more complicated, but the premise
 remains the same. This allows us to create this lovely diagram that forms the
 core of our vision systems:
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 730" width="855" height="730">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 730">
   <!-- svg-source:excalidraw -->
   
   <defs>

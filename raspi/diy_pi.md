@@ -42,12 +42,5 @@ aware.
 
 Once the process is complete, insert the SD card into the pi and give it a power
 source. From here, you can either continue to configure it via SSH or by
-plugging it into a monitor and keyboard. We recommend doing SSH, but it does
-require a few more steps.
-
-### Via SSH
-If you are on a MacOS or Linux device, you should already have SSH installed.
-Open up a terminal (typically *Terminal* on Mac), type `ssh`, and hit enter. It
-should spit out a bunch of text describing the usage of the command. On
-windows, you'll need to download an SSH client, such as
-[PuTTY](https://www.putty.org/).
+plugging it into a monitor and keyboard. SSH configuration is a little more
+difficult.
