@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766543938987">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766598287780">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766543938987" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766598287780" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766543938987" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766598287780" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766543938987" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766598287780" data-turbo-eval="false" defer></script>
     <link href="../../resources/css/katex.css?v=3.5.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../resources/js/katex.js?v=3.5.0" defer></script>
 </head>
@@ -169,12 +169,14 @@
     </h2>
 </doc-anchor-target>
 <p>Vectors are used to represent a direction and magnitude. Usually they are graphically denoted by an arrow: the length represents the magnitude of the arrow and the starting and ending points represent the direction. On paper they are represent with square brackets [ ] with numbers vertically stacked. The top represents the x direction, below that is the y, and in 3 dimensions their will be z below that.</p>
-<div class="math"><pre>\left(\begin{array}
-10\\
+<div class="math"><pre>\begin{bmatrix}
+10 \\
 2
-\end{array}\right)</pre></div>
-<p>The above 2d vector represents an arrow with the x component being 10 units and the y component being two units, so you can imagine this as an arrow going from the point (0, 0) to the point (10, 2). In the context of robots, these vectors usually represent
-the position of something. For example, vectors are often used to represent where an april tag is from the camera.</p>
+\end{bmatrix}</pre></div>
+<p>The above 2d vector represents an arrow with the x component being 10 units
+and the y component being two units, so you can imagine this as an arrow
+going from the point (0, 0) to the point (10, 2). In the context of robots,
+these vectors usually represent the position of something. For example, vectors are often used to represent where an april tag is from the camera.</p>
 <doc-anchor-target id="matrices">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#matrices">#</doc-anchor-trigger>
@@ -182,38 +184,38 @@ the position of something. For example, vectors are often used to represent wher
     </h2>
 </doc-anchor-target>
 <p>In essence, matrices are a way to hold multiple pieces of information in a single entity.</p>
-<div class="math"><pre>\left(\begin{array}
-6 &amp; 2\\
+<div class="math"><pre>\begin{bmatrix}
+6 &amp; 2 \\
 2 &amp; 1
-\end{array}\right)</pre></div>
+\end{bmatrix}</pre></div>
 <p>Above is a two by two matrix. Graphically, however, representing them is a bit more complex.
 We generally think of matrices as transformations of the coordinate grid. Lets say we start with
 a vector</p>
-<div class="math"><pre>\left(\begin{array}
-a\\
+<div class="math"><pre>\begin{bmatrix}
+a \\
 b
-\end{array}\right)</pre></div>
+\end{bmatrix}</pre></div>
 <p>on the grid, but then we want to transform this vector using a matrix.</p>
-<div class="math"><pre>left(\begin{array}
-3 &amp; 6\\
+<div class="math"><pre>\begin{bmatrix}
+3 &amp; 6 \\
 2 &amp; 4
-\end{array}\right)</pre></div>
+\end{bmatrix}</pre></div>
 <p>Applying this transformation, we get the x component, a, multilying the first column, and the y component, b,
 multiplying the second component:</p>
-<div class="math"><pre>\left(\begin{array}
-3a\
+<div class="math"><pre>\begin{bmatrix}
+3a \\
 2a                   
-\end{array}\right)   </pre></div>
+\end{bmatrix} </pre></div>
 <p>and</p>
-<div class="math"><pre>\left(\begin{array}
-6b\
+<div class="math"><pre>\begin{bmatrix}
+6b \\
 4b                   
-\end{array}\right)   </pre></div>
+\end{bmatrix}   </pre></div>
 <p>combining these into a single vector we get our result vector:</p>
-<div class="math"><pre>\left(\begin{array}
-3a + 6b\
+<div class="math"><pre>\begin{bmatrix}
+3a + 6b \\
 2a + 4b                 
-\end{array}\right)   </pre></div>
+\end{bmatrix}</pre></div>
 <p>This multi-step proccess is more commonly described as matrix multiplication. However,
 matrix multiplication isn&#x27;t as simple as scalar multiplication, so you can&#x27;t just multiply
 the corresponding components. I won&#x27;t get into the details of matrx multiplication, but for
