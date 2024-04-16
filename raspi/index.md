@@ -1,6 +1,6 @@
 ---
 label: Raspberry Pis
-order: 30
+order: 7
 icon: device-desktop
 ---
 !!!warning
