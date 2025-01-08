@@ -13,6 +13,12 @@ our goals when it comes to computer vision. As the name says, OpenCV
 is fully open source, and it handles much of the base level work with
 vision, including various aspects of image processing.
 
+## Installation
+In a virtual environment, you can run the following command to install OpenCV.
+```
+pip install opencv-python
+```
+If you would like to know more about installation, visit the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/installing-packages/).
 ## How to Use
 OpenCV has great documentation on all of its various functions and features,
 however, we obviously can't cover all of them in these docs. We will try to

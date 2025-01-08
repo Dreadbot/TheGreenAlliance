@@ -1,8 +1,12 @@
 input: .
 output: .retype
+outbound:
+  icon: link-external
+  iconAlign: right
 url: thegreenalliance.dev
 branding:
   title: The Green Alliance
   logo: eyeblack.svg
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
+favicon: favicon.svg
