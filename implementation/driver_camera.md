@@ -9,7 +9,7 @@ the driver station. In previous years, we would use the WPILib CameraServer,
 but due to recent updates to network tables code, as well as some issues with
 pip, the python package manager, we have moved to doing a simple mjpeg stream
 (which is exactly what camera server was under the hood) using
-[`mjpeg-streamer`](https://pypi.org/project/mjpeg-streamer/). To install,
+[`mjpeg-streamer` :icon-link-external:](https://pypi.org/project/mjpeg-streamer/){target="_blank"}. To install,
 simply run `pip install mjpeg-streamer` in a virtual environment, or `pip
 install mjpeg-streamer --break-system-packages` (it sounds scary, but it's
 actually not!). You'll also need `opencv-python` or `opencv-python-headless`.

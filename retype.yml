@@ -1,8 +1,11 @@
 input: .
 output: .retype
 outbound:
+  target: blank
   icon: link-external
   iconAlign: right
+  exclude:
+    - thegreenalliance.dev
 url: thegreenalliance.dev
 branding:
   title: The Green Alliance

@@ -73,4 +73,4 @@ This multi-step proccess is more commonly described as matrix multiplication. Ho
 matrix multiplication isn't as simple as scalar multiplication, so you can't just multiply 
 the corresponding components. I won't get into the details of matrx multiplication, but for 
 more info on linear algebra and to get a much better visual representation of what has 
-been explained in this article, I suggest watching [this video series](https://youtu.be/fNk_zzaMoSs?si=iBkvwhzAhbwECNF0) on youtube.
+been explained in this article, I suggest watching [this video series :icon-link-external:](https://youtu.be/fNk_zzaMoSs?si=iBkvwhzAhbwECNF0){target="_blank"} on youtube.
