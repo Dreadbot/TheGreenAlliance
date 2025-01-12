@@ -9,7 +9,7 @@ outbound:
 url: thegreenalliance.dev
 branding:
   title: The Green Alliance
-  logo: eyeblack.svg
+  logo: TGA.svg
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
-favicon: favicon.svg
+favicon: TGA.png

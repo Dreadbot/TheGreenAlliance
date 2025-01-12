@@ -5,14 +5,13 @@ icon: device-camera
 ---
 # Driver Camera
 The simplest useful kind of vision program is one which just pushes an image to
-the driver station. In previous years, we would use the WPILib CameraServer,
-but due to recent updates to network tables code, as well as some issues with
-pip, the python package manager, we have moved to doing a simple mjpeg stream
-(which is exactly what camera server was under the hood) using
-[`mjpeg-streamer` :icon-link-external:](https://pypi.org/project/mjpeg-streamer/){target="_blank"}. To install,
-simply run `pip install mjpeg-streamer` in a virtual environment, or `pip
-install mjpeg-streamer --break-system-packages` (it sounds scary, but it's
-actually not!). You'll also need `opencv-python` or `opencv-python-headless`.
+the driver station. We do this by using a simple mjpeg stream using
+[mjpeg-streamer :icon-link-external:](https://pypi.org/project/mjpeg-streamer/){target="_blank"}. To install,
+simply run 
+```
+pip install mjpeg-streamer
+```
+You'll also need [OpenCV](https://thegreenalliance.dev/opencv).
 Then, the minimally functional program is:
 
 ```py
@@ -57,11 +56,11 @@ refers to the current computer) on port `1181`, accessible from a browser by
 `xx.xx.xx.xx:1181`, replacing the `x`s with the pi's IP address on the network.
 The stream is then added to the server, and then server is started.
 
-```info
+!!!
 `127.0.0.1` will not work as the ip address on a computer that isn't the pi,
 since it also refers to the current computer on that computer, meaning it is
 expecting the stream to be hosted on that computer, not the pi!
-```
+!!!
 
 ```py
 while True:

@@ -1,0 +1,63 @@
+.dark a {
+  color: #73d425 !important;
+}
+a {
+  color: #178d01 !important;
+}
+.dark a:hover {
+  color: #a3ff69 !important;
+}
+a:hover {
+  color: #125f10 !important;
+}
+.dark h1 {
+  color: #73d425 !important;
+}
+h1 {
+  color: #178d01 !important;
+}
+.dark h2 {
+  color: #47bd31 !important;
+}
+h2 {
+  color: #37ad21 !important;
+}
+.dark p {
+  color: #dfdfdf !important;
+}
+p {
+  color: #000 !important;
+}
+b, strong {
+  color: #000 !important;
+}
+.dark b, .dark strong {
+  color: #ffffff !important;
+}
+#docs-site-logo {
+  color: #000 !important;
+}
+.dark .bg-blue-500 {
+  background-color: #73d425 !important;
+}
+.dark .text-blue-500 {
+  color: #73d425 !important;
+}
+.bg-blue-500 {
+  background-color: #178d01 !important;
+}
+.text-blue-500 {
+  color: #178d01 !important;
+}
+.dark .svg path {
+  stroke: #fff !important;
+}
+.svg path {
+  stroke: #000 !important;
+}
+.dark .svg text {
+  fill: #fff !important;
+}
+.svg text {
+  fill: #000 !important;
+}
