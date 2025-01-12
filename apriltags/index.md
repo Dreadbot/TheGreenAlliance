@@ -11,8 +11,8 @@ This section is a stub! Look out for more in a future update.
 
 ## What are AprilTags?
 An Apriltag is a fiducial marker used for a variety of tasks, ranging from
-[camera calibration](/implementation/cameracal.md) to
-[localization](/implementation/localization.md). AprilTags are all around the
+[camera calibration](/implementation/index.md) to
+[localization](/implementation/index.md). AprilTags are all around the
 field, whether you are in FRC or FTC.
 !!!
 While the term **fudicial** might sound scary, it just
