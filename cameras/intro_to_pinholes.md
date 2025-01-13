@@ -1,5 +1,5 @@
 ---
-label: Introduction to Pinholes
+label: Pinholes
 order: 99
 icon: info
 ---

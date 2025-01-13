@@ -11,7 +11,7 @@ simply run
 ```
 pip install mjpeg-streamer
 ```
-You'll also need [OpenCV](https://thegreenalliance.dev/opencv).
+You'll also need [OpenCV](/opencv).
 Then, the minimally functional program is:
 
 ```py
