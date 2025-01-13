@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790040555950">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790090231793">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -21,23 +21,26 @@
     <meta property="og:url" content="https://thegreenalliance.dev/cameras/">
     <meta property="og:title" content="Cameras">
     <meta property="og:description" content="Cameras are the foundation of computer vision; without them, we wouldn't have images to process in the first place. Needless to say, at least a basic">
+    <meta property="og:image" content="https://thegreenalliance.dev/placeholderfov.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thegreenalliance.dev/cameras/">
     <meta property="twitter:title" content="Cameras">
     <meta property="twitter:description" content="Cameras are the foundation of computer vision; without them, we wouldn't have images to process in the first place. Needless to say, at least a basic">
+    <meta property="twitter:image" content="https://thegreenalliance.dev/placeholderfov.jpg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../tga.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.790040555950" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.790090231793" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.790040555950" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.790090231793" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.790040555950" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.790090231793" data-turbo-eval="false" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
+    <meta name="google-site-verification" content="UjQYHj5Z-Y-mTBirpNusqfEyaJqRJ--tNnzivCA3Y-I" />
 
 </head>
 <body>
@@ -174,11 +177,80 @@ not as complicated as it seems.</p>
     </h2>
 </doc-anchor-target>
 <p>There are a couple of types of cameras, the main two that we&#x27;ll focus on are
-fisheyes and pinholes. Generally, if you&#x27;re thinking of a camera, it&#x27;s a pinhole.
-Fisheyes are a lot more complicated, and involve a heap of extra work before
-they can be processed with computer vision. For most computer vision purposes,
-especially in FRC robotics, pinhole cameras will be sufficient, and so that&#x27;s
-what our articles will go in depth on.</p>
+<strong>fisheyes</strong> and <strong>pinholes</strong>. Generally, if you&#x27;re thinking of a camera, it&#x27;s
+a pinhole. Fisheyes are a lot more complicated, and involve a heap of extra work
+before they can be processed with computer vision. For most computer vision
+purposes, especially in FIRST robotics, pinhole cameras will be sufficient, and so
+that&#x27;s what our articles will go in depth on.</p>
+<doc-anchor-target id="how-do-cameras-work">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-cameras-work">#</doc-anchor-trigger>
+        <span>How do Cameras Work?</span>
+    </h2>
+</doc-anchor-target>
+<p>Cameras use a sensor on the other side of their lens to convert recieved light into
+an image.</p>
+<doc-anchor-target id="camera-properties">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#camera-properties">#</doc-anchor-trigger>
+        <span>Camera Properties</span>
+    </h2>
+</doc-anchor-target>
+<p>Cameras have many different traits and <strong>properties</strong> that make them different.
+Some are extremely important when choosing a camera for your robot. Some could
+mean you cannot accomplish certain tasks. This means that effectively researching
+your cameras before purchasing can make (or break) your vision subsystems.</p>
+<p>Here are the most essential properties to look for when finding a camera, in
+descending order:</p>
+<doc-panel id="1-exposure-time" collapsed>
+    <template #title>1. Exposure Time</template>
+<p>When your camera is capturing light to produce an image, the shutter needs to be
+open long enough to produce an image. This time ranges from camera to camera, but
+the higher it is, the more <doc-anchor-trigger to="#problems">problems you&#x27;ll have</doc-anchor-trigger></p>
+</doc-panel>
+<doc-panel id="2-resolution" collapsed>
+    <template #title>2. Resolution</template>
+<p>The resolution of a camera is the amount of pixels in a single image produced by
+the camera. It is measured in pixels, typically represented as <strong>width</strong>x<strong>height</strong>.
+Having a low resolution is just like how nearsightedness works. When things are
+further away, they are harder to make out. This is because they are smaller from
+the camera&#x27;s perspective, and because of this you have less pixels to work with.
+Essentially, the lower the resolution, <em>the harder it is to make out small parts of an image.</em></p>
+</doc-panel>
+<doc-panel id="3-field-of-view-fov" collapsed>
+    <template #title>3. Field Of View (<strong>FOV</strong>)</template>
+<p>The FOV of a camera is the angular extent of which it can see at any given moment. It is
+determined by the camera&#x27;s horizontal and vertical angle of view, often measured in degrees,
+which is determined by the cameras lens.
+<figure class="content-center">
+    <img src="../placeholderfov.jpg" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+</doc-panel>
+<doc-panel id="4-shutter-type-rolling-global" collapsed>
+    <template #title>4. Shutter Type (Rolling / Global)</template>
+<p>The shutter type is the least important property of a camera if you prioritize the
+others first. Essentially, a camera will either capture all of the light at once
+(<strong>global shutter</strong>), or in a rolling motion (<strong>rolling shutter</strong>), typically top
+to bottom. While a rolling shutter camera can cause <doc-anchor-trigger to="#problems">some artifacts</doc-anchor-trigger>, it is
+not likely to be the sole cause.</p>
+</doc-panel>
+<doc-anchor-target id="problems">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#problems">#</doc-anchor-trigger>
+        <span>Problems</span>
+    </h2>
+</doc-anchor-target>
+<p>In a perfect world, any camera would suit any application. However, the cameras
+you will be purchasing for robotics will not be perfect. The first steps to dealing
+with this imperfection are determining the</p>
+<doc-anchor-target id="motion-blur">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#motion-blur">#</doc-anchor-trigger>
+        <span>Motion Blur</span>
+    </h3>
+</doc-anchor-target>
 
                                 
                                 <!-- Required only on API pages -->
@@ -201,7 +273,7 @@ what our articles will go in depth on.</p>
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../cameras/intro_to_pinholes/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Introduction to Pinholes</span>
+                                                <span class="block mt-1">Pinholes</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

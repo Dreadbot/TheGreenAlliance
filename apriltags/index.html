@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790040555950">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790090231793">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,13 +31,14 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../tga.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.790040555950" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.790090231793" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.790040555950" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.790090231793" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.790040555950" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.790090231793" data-turbo-eval="false" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
+    <meta name="google-site-verification" content="UjQYHj5Z-Y-mTBirpNusqfEyaJqRJ--tNnzivCA3Y-I" />
 
 </head>
 <body>
@@ -186,8 +187,8 @@
     </h2>
 </doc-anchor-target>
 <p>An Apriltag is a fiducial marker used for a variety of tasks, ranging from
-<a href="../implementation/">camera calibration</a> to
-<a href="../implementation/">localization</a>. AprilTags are all around the
+<a href="/implementation/index.md">camera calibration</a> to
+<a href="/implementation/index.md">localization</a>. AprilTags are all around the
 field, whether you are in FRC or FTC.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
@@ -202,7 +203,7 @@ field, whether you are in FRC or FTC.</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>While the term <strong>fudicial</strong> might sound scary, it just
+<p>While the term <strong>fiducial</strong> might sound scary, it just
 means that the tag has a known fixed position, serving
 as a point of comparison. This means whenever an AprilTag
 is seen by a camera, the camera can figure out its position
@@ -215,6 +216,25 @@ relative to the tag.</p>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-we-use-apriltags">#</doc-anchor-trigger>
         <span>How do we use Apriltags?</span>
     </h2>
+</doc-anchor-target>
+<p>As said before, there are a variety of useful implementations of AprilTags,
+and because of their properties, simply having a camera on your robot to
+detect the tags around the field is enough to improve your controls, localization
+and more.</p>
+<doc-anchor-target id="noteworthy-topics">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#noteworthy-topics">#</doc-anchor-trigger>
+        <span>Noteworthy Topics</span>
+    </h3>
+</doc-anchor-target>
+<p>Before we go into AprilTag detection, there are a few things to keep in mind.
+First, your camera. Unless your drivers move at the pace of a snail, you will
+need to minimize the <a href="../cameras/#motion-blur">motion blur</a> of your camera. There are a few things that</p>
+<doc-anchor-target id="detection">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#detection">#</doc-anchor-trigger>
+        <span>Detection</span>
+    </h3>
 </doc-anchor-target>
 
                                 

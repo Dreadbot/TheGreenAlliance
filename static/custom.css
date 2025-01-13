@@ -61,3 +61,9 @@ b, strong {
 .svg text {
   fill: #000 !important;
 }
+:is(.dark .group:hover .dark\:group-hover\:text-blue-400) {
+  color:rgb(115 212 37/var(--tw-text-opacity))
+}
+.border-blue-500 {
+  border-color: #73d425 !important;
+}
