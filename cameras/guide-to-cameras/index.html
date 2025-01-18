@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790090440266">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790493703681">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Trigonometry</title>
-    <meta name="title" content="Trigonometry">
-    <meta name="description" content="Having a basic understanding of trigonometry is essential to understanding how to take data from an image and projecting it back into the real world.">
+    <title>Cameras</title>
+    <meta name="title" content="Cameras">
+    <meta name="description" content="Cameras are the foundation of computer vision; without them, we wouldn't have images to process in the first place. Needless to say, at least a basic">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://thegreenalliance.dev/math/basic_trigonometry/">
+    <link rel="canonical" href="https://thegreenalliance.dev/cameras/guide-to-cameras/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thegreenalliance.dev/math/basic_trigonometry/">
-    <meta property="og:title" content="Trigonometry">
-    <meta property="og:description" content="Having a basic understanding of trigonometry is essential to understanding how to take data from an image and projecting it back into the real world.">
+    <meta property="og:url" content="https://thegreenalliance.dev/cameras/guide-to-cameras/">
+    <meta property="og:title" content="Cameras">
+    <meta property="og:description" content="Cameras are the foundation of computer vision; without them, we wouldn't have images to process in the first place. Needless to say, at least a basic">
+    <meta property="og:image" content="https://thegreenalliance.dev/placeholderfov.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://thegreenalliance.dev/math/basic_trigonometry/">
-    <meta property="twitter:title" content="Trigonometry">
-    <meta property="twitter:description" content="Having a basic understanding of trigonometry is essential to understanding how to take data from an image and projecting it back into the real world.">
+    <meta property="twitter:url" content="https://thegreenalliance.dev/cameras/guide-to-cameras/">
+    <meta property="twitter:title" content="Cameras">
+    <meta property="twitter:description" content="Cameras are the foundation of computer vision; without them, we wouldn't have images to process in the first place. Needless to say, at least a basic">
+    <meta property="twitter:image" content="https://thegreenalliance.dev/placeholderfov.jpg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../tga.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.790090440266" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.790493703681" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790090440266" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790493703681" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790090440266" data-turbo-eval="false" defer></script>
-    <link href="../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
-    <script id="katex-js" data-cfasync="false" src="../../resources/js/katex.js?v=3.6.0" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790493703681" data-turbo-eval="false" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
     <meta name="google-site-verification" content="U9jZwMXQDaKFV8Ldy8r6yq0224XzGu8jW0KpxPKL2PA" />
@@ -160,68 +160,123 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="trigonometry" class="break-words">
+<doc-anchor-target id="cameras" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#trigonometry">#</doc-anchor-trigger>
-        <span>Trigonometry</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cameras">#</doc-anchor-trigger>
+        <span>Cameras</span>
     </h1>
 </doc-anchor-target>
-<p>Having a basic understanding of trigonometry is essential to understanding how
-to take data from an image and projecting it back into the real world.
-Trigonometry is the mathematics behind triangles, and mostly it gives us a few
-operations we can use on angles or side lengths to solve for the exact
-dimensions of a triangle.</p>
-<doc-anchor-target id="soh-cah-toa">
+<p>Cameras are the foundation of computer vision; without them, we wouldn&#x27;t have
+images to process in the first place. Needless to say, at least a basic
+understanding is essential for working with vision code; thankfully, they&#x27;re
+not as complicated as it seems.</p>
+<doc-anchor-target id="establishing-the-type">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#soh-cah-toa">#</doc-anchor-trigger>
-        <span>SOH CAH TOA</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#establishing-the-type">#</doc-anchor-trigger>
+        <span>Establishing the Type</span>
     </h2>
 </doc-anchor-target>
-<p>The three basic trig functions are <span class="math">\sin</span>, <span class="math">\cos</span>, and <span class="math">\tan</span>. Given the triangle:</p>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 515.2 388.8" width="515.2" height="388.8" class="svg">
-  <!-- svg-source:excalidraw -->
-  
-  <defs>
-    <style class="style-fonts">
-      @font-face {
-        font-family: "Virgil";
-        src: url("https://excalidraw.com/Virgil.woff2");
-      }
-      @font-face {
-        font-family: "Cascadia";
-        src: url("https://excalidraw.com/Cascadia.woff2");
-      }
-      @font-face {
-        font-family: "Assistant";
-        src: url("https://excalidraw.com/Assistant-Regular.woff2");
-      }
-    </style>
-    <clipPath id="qrKNBfiHwTrMVxfn2wh7w">
-            <rect transform="translate(0 0) rotate(0 257.6 194.4)" width="515.2" height="388.8">
-          </rect>
-        </clipPath>
-  </defs>
-  <g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g stroke-linecap="round"><g transform="translate(104.59999999999991 279.59999999999997) rotate(0 148.85714285714266 0)"><path d="M0 0 C49.62 0, 248.1 0, 297.71 0 M0 0 C49.62 0, 248.1 0, 297.71 0" stroke-width="1" fill="none"></path></g></g><mask></mask></g><g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g stroke-linecap="round"><g transform="translate(402.5999999999997 279.59999999999997) rotate(0 0 -99)"><path d="M0 0 C0 -33, 0 -165, 0 -198 M0 0 C0 -33, 0 -165, 0 -198"  stroke-width="1" fill="none"></path></g></g><mask></mask></g><g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g stroke-linecap="round"><g transform="translate(103.53984962406025 279.11127819548875) rotate(0 149.71428571428567 -98.64285714285714)"><path d="M0 0 C49.9 -32.88, 249.52 -164.4, 299.43 -197.29 M0 0 C49.9 -32.88, 249.52 -164.4, 299.43 -197.29" stroke-width="1" fill="none"></path></g></g><mask></mask></g><g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g stroke-linecap="round"><g transform="translate(158.69888357256673 242.967145135566) rotate(0 9.399999999999977 18.19999999999999)"><path d="M0 0 C1.67 1.87, 7.33 7.2, 10 11.2 C12.67 15.2, 14.53 19.8, 16 24 C17.47 28.2, 18.33 34.33, 18.8 36.4 M0 0 C1.67 1.87, 7.33 7.2, 10 11.2 C12.67 15.2, 14.53 19.8, 16 24 C17.47 28.2, 18.33 34.33, 18.8 36.4" stroke="#ffffff" stroke-width="1" fill="none"></path></g></g><mask></mask></g><g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g transform="translate(236.6988835725665 142.16714513556605) rotate(0 5.5 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#ffffff" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">H</text></g></g><g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g transform="translate(417.0988835725666 170.56714513556602) rotate(0 7.5 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#ffffff" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">O</text></g></g><g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g transform="translate(269.0988835725666 294.96714513556594) rotate(0 6.5 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#ffffff" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">A</text></g></g><g clip-path="url(#qrKNBfiHwTrMVxfn2wh7w)"><g transform="translate(188.29888357256687 239.36714513556598) rotate(0 5.5 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#ffffff" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">θ</text></g></g>
-</svg>
-&nbsp;
-<p>We can define these functions as:</p>
-<div class="math"><pre>\begin{split}
-\sin \theta &amp;= \frac{O}{H} \\
-\cos \theta &amp;= \frac{A}{H} \\
-\tan \theta &amp;= \frac{O}{A} \\
-\end{split}</pre></div>
-<p>There are also inverse functions for these, so that you can determine the angle
-from the side lengths. These can be written in one of two ways: putting
-<span class="math">\text{arc}</span> in front, or by putting a <span class="math">^{-1}</span> right after the function, such as:</p>
-<div class="math"><pre>\sin^{-1} \frac{O}{H} = \arcsin \frac{O}{H} = \theta</pre></div>
-<p>So as not to get <span class="math">\sin^{-1} x</span> confused with <span class="math">(\sin x)^{-1}</span>, there are another
-3 functions that represent the reciprocals of the first three:</p>
-<div class="math"><pre>\begin{split}
-\csc \theta = \frac{1}{\sin \theta} = \frac{H}{O} \\
-\sec \theta = \frac{1}{\cos \theta} = \frac{H}{A} \\
-\cot \theta = \frac{1}{\tan \theta} = \frac{A}{O} \\
-\end{split}</pre></div>
-<p>all of which can also be inverted by the same methods as above.</p>
+<p>All digital cameras use a sensor and a lens to capture light from the environment.
+There are a couple of types of cameras, the main two that we&#x27;ll focus on are
+<strong>fisheyes</strong> and <a href="../intro-to-pinholes/">pinholes</a>. Generally, if you&#x27;re thinking of a camera, it&#x27;s
+a pinhole. Fisheyes are a lot more complicated, and involve a heap of extra work
+before they can be processed with computer vision. For most computer vision
+purposes, especially in FIRST robotics, pinhole cameras will be sufficient, and so
+that&#x27;s what our articles will go in depth on.</p>
+<doc-anchor-target id="camera-properties">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#camera-properties">#</doc-anchor-trigger>
+        <span>Camera Properties</span>
+    </h2>
+</doc-anchor-target>
+<p>Cameras have many different traits and <strong>properties</strong> that make them different.
+Some are extremely important when choosing a camera for your robot. Some could
+mean you cannot accomplish certain tasks. This means that effectively researching
+your cameras before purchasing can make (or break) your vision subsystems.</p>
+<p>Here are the most essential properties to look for when finding a camera, in
+descending order:</p>
+<doc-panel id="1-exposure-time" collapsed>
+    <template #title><strong><a href="">1. Exposure Time</a></strong></template>
+<p>When your camera is capturing light to produce an image, the shutter needs to be
+open <em>long enough to produce an image</em>. This time ranges from camera to camera, but
+the higher it is, the more <doc-anchor-trigger to="#problems">problems you&#x27;ll have</doc-anchor-trigger>. This is because if
+your camera captures the light in the scene for a longer amount of time, <em>there is
+more time for the scene to change</em>, blurring the image. Generally, prioritize
+minimum exposure time when finding your camera.</p>
+</doc-panel>
+<doc-panel id="2-resolution" collapsed>
+    <template #title><strong><a href="">2. Resolution</a></strong></template>
+<p>The resolution of a camera is the amount of pixels in a single image produced by
+the camera. It is measured in pixels, typically represented as <strong>width</strong>x<strong>height</strong>.
+Having a low resolution is just like how nearsightedness works. When things are
+further away, they are harder to make out. This is because they are smaller from
+the camera&#x27;s perspective, and because of this you have less pixels to work with.
+Essentially, the lower the resolution, <em>the harder it is to make out small parts of an image.</em></p>
+</doc-panel>
+<doc-panel id="3-field-of-view-fov" collapsed>
+    <template #title><strong><a href="">3. Field Of View (FOV)</a></strong></template>
+<p>The FOV of a camera is the angular extent of which it can see at any given moment. It is
+determined by the camera&#x27;s horizontal and vertical angle of view, often measured in degrees,
+which is determined by the cameras lens.
+<figure class="content-center">
+    <img src="../../placeholderfov.jpg" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+</doc-panel>
+<doc-panel id="4-shutter-type-rolling-global" collapsed>
+    <template #title><strong><a href="">4. Shutter Type (Rolling / Global)</a></strong></template>
+<p>The shutter type is the least important property of a camera if you prioritize the
+others first. Essentially, a camera will either capture all of the light at once
+(<strong>global shutter</strong>), or in a rolling motion (<strong>rolling shutter</strong>), typically top
+to bottom. While a rolling shutter camera can cause <doc-anchor-trigger to="#problems">some artifacts</doc-anchor-trigger>, it is
+not likely to be the sole cause.</p>
+</doc-panel>
+<doc-anchor-target id="problems">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#problems">#</doc-anchor-trigger>
+        <span>Problems</span>
+    </h2>
+</doc-anchor-target>
+<p>In a perfect world, any camera would suit any application. However, the cameras
+you will be purchasing for robotics will not be perfect. The first steps to dealing
+with this imperfection are determining the causes as well as the steps to improvement,
+which is exactly what this section will cover.</p>
+<doc-panel id="motion-blur" collapsed>
+    <template #title><strong><a href="">Motion Blur</a></strong></template>
+<p>Motion blur is going to be the primary cause of your problems, whether it&#x27;s that you
+cannot localize when you&#x27;re turning, or that the slight shakiness of your robot moving
+causes blurriness. This is caused primarily by either too high of an <doc-anchor-trigger to="#1-exposure-time">exposure time</doc-anchor-trigger>
+or poor camera <doc-anchor-trigger to="#mounting">mounting</doc-anchor-trigger>.</p>
+</doc-panel>
+<doc-panel id="rolling-shutter-artifacts" collapsed>
+    <template #title><strong><a href="">Rolling Shutter Artifacts</a></strong></template>
+<p>Rolling shutter artifacts are a result of fast movement and a rolling shutter camera. These artifacts look like smearing, instead of bluriness like you would have with <doc-anchor-trigger to="#motion-blur">motion blur</doc-anchor-trigger>. You can mitigate rolling shutter artifacts by turning slower or reducing exposure time. You can also remove the though of them entirely by getting a global shutter camera.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Typically, a rolling shutter will not be a major source of issue, as majority of problems can be solved just by mitigating motion blur and getting a camera with a low exposure time.</p>
+        </div>
+    </div>
+</div>
+</doc-panel>
+<doc-panel id="mounting" collapsed>
+    <template #title><strong><a href="">Mounting</a></strong></template>
+<p>Mounting a camera can seem like a trivial task, but it turns out to be quite a bit more
+complex than first assumed. Making sure your camera mount is <strong>stable, precise, and protects
+your camera</strong> is extremely important, because without, you will end up with <strong>innaccurate poses,
+<doc-anchor-trigger to="#motion-blur">motion blur</doc-anchor-trigger></strong>, and worst of all, <strong>broken cameras</strong>.</p>
+</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
@@ -231,20 +286,20 @@ from the side lengths. These can be written in one of two ways: putting
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../math/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Math</span>
+                                                <span class="block mt-1">Intro to Vision</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../math/linear_algebra/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../cameras/intro-to-pinholes/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Linear Algebra</span>
+                                                <span class="block mt-1">Pinholes</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -288,7 +343,7 @@ from the side lengths. These can be written in one of two ways: putting
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Basic Trigonometry", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Guide to Cameras", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 

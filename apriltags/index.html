@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790090440266">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790493703681">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../tga.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.790090440266" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.790493703681" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.790090440266" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.790493703681" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.790090440266" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.790493703681" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.790493703681" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
     <meta name="google-site-verification" content="U9jZwMXQDaKFV8Ldy8r6yq0224XzGu8jW0KpxPKL2PA" />
@@ -186,10 +187,7 @@
         <span>What are AprilTags?</span>
     </h2>
 </doc-anchor-target>
-<p>An Apriltag is a fiducial marker used for a variety of tasks, ranging from
-<a href="/implementation/index.md">camera calibration</a> to
-<a href="/implementation/index.md">localization</a>. AprilTags are all around the
-field, whether you are in FRC or FTC.</p>
+<p>An Apriltag is a fiducial marker used for a variety of tasks, ranging from camera calibration to localization. AprilTags are all around the field, whether you are in FRC or FTC.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -203,11 +201,7 @@ field, whether you are in FRC or FTC.</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>While the term <strong>fiducial</strong> might sound scary, it just
-means that the tag has a known fixed position, serving
-as a point of comparison. This means whenever an AprilTag
-is seen by a camera, the camera can figure out its position
-relative to the tag.</p>
+<p>While the term <strong>fiducial</strong> might sound scary, it just means that the tag has a known, fixed position, serving as a point of comparison. This means whenever an AprilTag is seen by a camera, the camera can figure out its position relative to the tag.</p>
         </div>
     </div>
 </div>
@@ -217,25 +211,86 @@ relative to the tag.</p>
         <span>How do we use Apriltags?</span>
     </h2>
 </doc-anchor-target>
-<p>As said before, there are a variety of useful implementations of AprilTags,
-and because of their properties, simply having a camera on your robot to
-detect the tags around the field is enough to improve your controls, localization
-and more.</p>
+<p>As said before, there are a variety of useful implementations of AprilTags, and because of their properties, simply having a camera on your robot to detect the tags around the field is enough to improve your controls, localization and more.</p>
 <doc-anchor-target id="noteworthy-topics">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#noteworthy-topics">#</doc-anchor-trigger>
         <span>Noteworthy Topics</span>
     </h3>
 </doc-anchor-target>
-<p>Before we go into AprilTag detection, there are a few things to keep in mind.
-First, your camera. Unless your drivers move at the pace of a snail, you will
-need to minimize the <a href="../cameras/#motion-blur">motion blur</a> of your camera. There are a few things that</p>
+<p>Before we go into AprilTag detection, there are a few things to keep in mind. First, be sure you have a decent <a href="../cameras/guide-to-cameras/">camera setup</a>.</p>
+<p>You must also have a good camera calibration, as otherwise, your detections may be inaccurate, and therefore, worthless. It is a good idea to undistort your image before you attempt to detect any AprilTags.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Camera calibration articles coming in a future update!</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="detection">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#detection">#</doc-anchor-trigger>
         <span>Detection</span>
     </h3>
 </doc-anchor-target>
+<p>Detecting AprilTags is quite complex, though it can be broken down into many steps. We will not go into the specifics of how tag detection works here, but you can view <a href="https://docs.wpilib.org/en/stable/docs/software/vision-processing/apriltag/apriltag-intro.html#processing-technique" target="_blank">WPILib&#x27;s explanation <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></g></svg></a> if you would like to know more.</p>
+<p>For our implemetation, we will be using a library called <a href="https://github.com/duckietown/lib-dt-apriltags" target="_blank">dt_apriltags <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></g></svg></a> to give us the rotation and translation of the tag relative to our camera, as well as the tag ID. You can install it using pip:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">pip install dt-apriltags</code></pre>
+</doc-codeblock></div>
+<p>To run detections, you must first create a <strong>Detector</strong> object. There are a couple of different options for this step, and we recommend finding your own settings for this, but we generally recommend the following values:</p>
+<ul>
+<li><code v-pre>searchpath=['apriltags']</code> This is a required setting.</li>
+<li><code v-pre>families='tag36h11'</code> This is the tag family of the FRC AprilTags, so you must use this setting.</li>
+<li><code v-pre>nthreads=1</code> You can raise this up to 4 if you&#x27;re using a Raspberry Pi 5, but you should do your own testing to see what works best.</li>
+<li><code v-pre>quad_decimate=1.0</code> Changing this value to 1.0 will increase the detection rate of tags by increasing the resolution when searching for quads.</li>
+<li><code v-pre>quad_sigma=0.0</code> Setting this value above 0 may help with noise, but if you do not have much noise, keep it at 0.</li>
+<li><code v-pre>decode_sharpening=0.25</code> This option helps to detect smaller tags.</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Most of these settings are default, so we do not need to set them all when we create our Detector.</p>
+        </div>
+    </div>
+</div>
+<p>If we were to create our Detector in code, it would look like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">at_detector = Detector(searchpath=['apriltags'], quad_decimate=1.0)</code></pre>
+</doc-codeblock></div>
+<p>In order to recieve detections from our camera, we need to call <code v-pre>.detect()</code> on our Detector. This is another function that has a few parameters:</p>
+<p><code v-pre>at_detector.detect(img, estimate_tag_pose, camera_params, tag_size)</code></p>
+<p>In order to recieve detections, you must pass in these variables accordingly:
+<code v-pre>img</code> - This must be your image in <strong>grayscale</strong>
+<code v-pre>estimate_tag_pose</code> - Must be set to true.
+<code v-pre>camera_params</code> - Your camera parameters in the form [fx, fy, cx, cy]
+<code v-pre>tag_size</code> - The tag side length in meters. In FRC, the tags are 0.1651 x 0.1651m (6.5 inches).</p>
+<p>If we were to write this detector in code, it would look like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">tags = at_detector.detect(grayscale_frame,
+                          estimate_tag_pose=True,
+                          camera_params=camera_params,
+                          tag_size=0.1651)</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -245,20 +300,20 @@ need to minimize the <a href="../cameras/#motion-blur">motion blur</a> of your c
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../opencv/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Welcome</span>
+                                                <span class="block mt-1">Open​CV</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../math/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../math/basic-trigonometry/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Math</span>
+                                                <span class="block mt-1">Basic Trigonometry</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -302,7 +357,7 @@ need to minimize the <a href="../cameras/#motion-blur">motion blur</a> of your c
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "AprilTags", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "AprilTags", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 
