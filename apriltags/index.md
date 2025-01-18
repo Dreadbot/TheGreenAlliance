@@ -54,10 +54,10 @@ In order to recieve detections from our camera, we need to call `.detect()` on o
 `at_detector.detect(img, estimate_tag_pose, camera_params, tag_size)`
 
 In order to recieve detections, you must pass in these variables accordingly:
-`img` - This must be your image in **grayscale**
-`estimate_tag_pose` - Must be set to true.
-`camera_params` - Your camera parameters in the form [fx, fy, cx, cy]
-`tag_size` - The tag side length in meters. In FRC, the tags are 0.1651 x 0.1651m (6.5 inches).
+- `img` - This must be your image in **grayscale**
+- `estimate_tag_pose` - Must be set to true.
+- `camera_params` - Your camera parameters in the form [fx, fy, cx, cy]
+- `tag_size` - The tag side length in meters. In FRC, the tags are 0.1651 x 0.1651m (6.5 inches).
 
 If we were to write this detector in code, it would look like this:
 ```py
