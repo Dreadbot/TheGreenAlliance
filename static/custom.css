@@ -11,13 +11,13 @@ a:hover {
   color: #125f10 !important;
 }
 .dark h1 {
-  color: #73d425 !important;
+  color: #64c819 !important;
 }
 h1 {
   color: #178d01 !important;
 }
 .dark h2 {
-  color: #47bd31 !important;
+  color: #42a630 !important;
 }
 h2 {
   color: #37ad21 !important;
@@ -66,4 +66,34 @@ b, strong {
 }
 .border-blue-500 {
   border-color: #73d425 !important;
+}
+.dark .docs-markdown h1 .header-anchor-trigger:hover {
+  --tw-text-opacity:1 !important;
+  color: #a3ff69 !important;
+  text-decoration-line:none !important;
+}
+.dark .docs-markdown h2 .header-anchor-trigger:hover {
+  --tw-text-opacity:1 !important;
+  color: #a3ff69 !important;
+  text-decoration-line:none !important;
+}
+.dark .docs-markdown h3 .header-anchor-trigger:hover {
+  --tw-text-opacity:1 !important;
+  color: #a3ff69 !important;
+  text-decoration-line:none !important;
+}
+.dark .docs-markdown h4 .header-anchor-trigger:hover {
+  --tw-text-opacity:1 !important;
+  color: #a3ff69 !important;
+  text-decoration-line:none !important;
+}
+.dark .docs-markdown h5 .header-anchor-trigger:hover {
+  --tw-text-opacity:1 !important;
+  color: #a3ff69 !important;
+  text-decoration-line:none !important;
+}
+.dark .docs-markdown h6 .header-anchor-trigger:hover {
+  --tw-text-opacity:1 !important;
+  color: #a3ff69 !important;
+  text-decoration-line:none !important;
 }

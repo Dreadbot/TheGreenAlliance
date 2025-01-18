@@ -1,7 +1,7 @@
 ---
-label: Welcome
+label: Intro to Vision
 order: 99
-icon: home
+icon: eye
 ---
 # The Green Alliance
 
@@ -9,12 +9,12 @@ icon: home
 Computer vision is the technology that allows computers to analyze, interpret,
 and understand visuals like humans do. It can involve various tasks ranging
 from spotting a saturated object to determining where something is in its
-environment. Computers complete these tasks by using [Cameras](cameras/index.md),
+environment. Computers complete these tasks by using [Cameras](cameras/guide-to-cameras.md),
 processing their inputs frame by frame with some algorithm to achieve the deisired
 result.
 
 Within these docs we will teach you how to implement things that we determine to
-be valuable within the scope of FIRST Robotics. [More information on our roadmap](meta/version.md)
+be valuable within the scope of FIRST Robotics. [More information on our roadmap](/version)
 
 ## What You Need
 To get started, we recommend a USB camera (anything around 720p or above will do), 

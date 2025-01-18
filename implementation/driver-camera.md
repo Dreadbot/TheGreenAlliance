@@ -7,7 +7,7 @@ icon: device-camera
 The simplest useful kind of vision program is one which just pushes an image to
 the driver station. We do this by using a simple mjpeg stream using
 [mjpeg-streamer :icon-link-external:](https://pypi.org/project/mjpeg-streamer/){target="_blank"}. To install,
-simply run 
+simply run:
 ```
 pip install mjpeg-streamer
 ```

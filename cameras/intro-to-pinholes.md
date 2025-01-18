@@ -3,7 +3,7 @@ label: Pinholes
 order: 99
 icon: info
 ---
-# Introduction to Pinholes
+# Pinhole Cameras
 
 Pinhole cameras let light converge into a tiny hole (a pinhole!) and then 
 diverge on the other side onto an image plane. In old cameras, this plane was 
