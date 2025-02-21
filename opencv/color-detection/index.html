@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Linear Algebra</title>
-    <meta name="title" content="Linear Algebra">
-    <meta name="description" content="Linear Algebra is an important tool that we use to help find the position of the robot on the field.">
+    <title>Color Detection</title>
+    <meta name="title" content="Color Detection">
+    <meta name="description" content="Object detection is the process of finding and localizing specific objects relative to the camera.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://thegreenalliance.dev/math/linear-algebra/">
+    <link rel="canonical" href="https://thegreenalliance.dev/opencv/color-detection/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thegreenalliance.dev/math/linear-algebra/">
-    <meta property="og:title" content="Linear Algebra">
-    <meta property="og:description" content="Linear Algebra is an important tool that we use to help find the position of the robot on the field.">
+    <meta property="og:url" content="https://thegreenalliance.dev/opencv/color-detection/">
+    <meta property="og:title" content="Color Detection">
+    <meta property="og:description" content="Object detection is the process of finding and localizing specific objects relative to the camera.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://thegreenalliance.dev/math/linear-algebra/">
-    <meta property="twitter:title" content="Linear Algebra">
-    <meta property="twitter:description" content="Linear Algebra is an important tool that we use to help find the position of the robot on the field.">
+    <meta property="twitter:url" content="https://thegreenalliance.dev/opencv/color-detection/">
+    <meta property="twitter:title" content="Color Detection">
+    <meta property="twitter:description" content="Object detection is the process of finding and localizing specific objects relative to the camera.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -36,8 +36,7 @@
     <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793484985411" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793484985411" data-turbo-eval="false" defer></script>
-    <link href="../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
-    <script id="katex-js" data-cfasync="false" src="../../resources/js/katex.js?v=3.6.0" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793484985411" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
     <meta name="google-site-verification" content="U9jZwMXQDaKFV8Ldy8r6yq0224XzGu8jW0KpxPKL2PA" />
@@ -160,10 +159,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="linear-algebra" class="break-words">
+<doc-anchor-target id="color-detection" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#linear-algebra">#</doc-anchor-trigger>
-        <span>Linear Algebra</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#color-detection">#</doc-anchor-trigger>
+        <span>Color Detection</span>
     </h1>
 </doc-anchor-target>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -173,71 +172,94 @@
           <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
             <img class="object-cover" src="https://www.thebluealliance.com/avatar/2025/frc3656.png">
           </div>
-          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Arman Buyukbozkirlii</div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Luke Baur</div>
         </div>
     </div>
 </div>
 
-<p>Linear Algebra is an important tool that we use to help find the position of the robot on the field.</p>
-<doc-anchor-target id="vectors">
+<p>Object detection is the process of finding and localizing specific objects relative to the camera. In order to find an object, you have a lot of options. Here, we will describe how to detect objects using color, but you can also use neural network models or detect by shape. To detect an object based on its color, you need to consistently see the object in changing light conditions, as well as remove false positives. We can do this with OpenCV using some of their built-in functions.</p>
+<doc-anchor-target id="inrange-and-bitwise-functions">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vectors">#</doc-anchor-trigger>
-        <span>Vectors</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inrange-and-bitwise-functions">#</doc-anchor-trigger>
+        <span>Inrange and Bitwise Functions</span>
     </h2>
 </doc-anchor-target>
-<p>Vectors are used to represent a direction and magnitude. Usually they are graphically denoted by an arrow: the length represents the magnitude of the arrow and the starting and ending points represent the direction. On paper they are represented with square brackets [ ] with numbers vertically stacked. The top represents the x direction, below that is the y, and in 3 dimensions their will be z below that.</p>
-<div class="math"><pre>\begin{bmatrix}
-10 \\
-2
-\end{bmatrix}</pre></div>
-<p>The above 2d vector represents an arrow with the x component being 10 units
-and the y component being two units, so you can imagine this as an arrow
-going from the point (0, 0) to the point (10, 2). In the context of robots,
-these vectors usually represent the position of something. For example, vectors are often used to represent where an april tag is from the camera.</p>
-<doc-anchor-target id="matrices">
+<p>Some of the most basic yet essential functions in OpenCV are the inrange and bitwise functions. These work as follows:</p>
+<hr>
+<p><code v-pre>cv2.inRange(src, lower_bound, upper_bound)</code> - This function will take every single pixel of the specified source image (<code v-pre>src</code>) and calculate whether or not it exists within a specified range (<code v-pre>lower_bound</code>-<code v-pre>upper_bound</code>) with the bounds acting as allowed ranges for each color value. This will return a binary image with the 1s, or white pixels representing the pixels that fall within that range. This is most useful when used with an HSV color format. Here is an example use case of <code v-pre>cv2.inRange</code> that keeps all bright cyan pixels:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">lower_bound = np.array([75, 55, 10])
+upper_bound = np.array([90, 255, 255])
+
+blue_frame = cv2.inRange(hsv_frame, lower_bound, upper_bound)</code></pre>
+</doc-codeblock></div>
+<hr>
+<p>For each of these next functions, they all follow the same pattern of logic using boolean operators. Each one corresponds to their boolean operator and will take one or two images and return the boolean operator output of them combined. This should be done on binary images unless you are masking them.</p>
+<p><code v-pre>cv2.bitwise_and(img_1, img_2, *mask)</code> - Returns the boolean AND of the images.</p>
+<p><code v-pre>cv2.bitwise_or(img_1, img_2, *mask)</code> - Returns the boolean OR of the images.</p>
+<p><code v-pre>cv2.bitwise_xor(img_1, img_2, *mask)</code> - Returns the boolean XOR of the images.</p>
+<p><code v-pre>cv2.bitwise_not(img_1, *mask)</code> - Returns the boolean NOT of an image.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Each of these functions allows you to pass in a <code v-pre>mask</code>. This will allow you to pass in a binary image as a mask, to determine which pixels of the image will be kept, and which ones are removed regardless.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="dilation-and-erosion">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#matrices">#</doc-anchor-trigger>
-        <span>Matrices</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dilation-and-erosion">#</doc-anchor-trigger>
+        <span>Dilation and Erosion</span>
     </h2>
 </doc-anchor-target>
-<p>In essence, matrices are a way to hold multiple pieces of information in a single entity.</p>
-<div class="math"><pre>\begin{bmatrix}
-6 &amp; 2 \\
-2 &amp; 1
-\end{bmatrix}</pre></div>
-<p>Above is a two by two matrix. Graphically, however, representing them is a bit more complex.
-We generally think of matrices as transformations of the coordinate grid. Lets say we start with
-a vector</p>
-<div class="math"><pre>\begin{bmatrix}
-a \\
-b
-\end{bmatrix}</pre></div>
-<p>on the grid, but then we want to transform this vector using a matrix.</p>
-<div class="math"><pre>\begin{bmatrix}
-3 &amp; 6 \\
-2 &amp; 4
-\end{bmatrix}</pre></div>
-<p>Applying this transformation, we get the x component, a, multilying the first column, and the y component, b,
-multiplying the second component:</p>
-<div class="math"><pre>\begin{bmatrix}
-3a \\
-2a                   
-\end{bmatrix} </pre></div>
-<p>and</p>
-<div class="math"><pre>\begin{bmatrix}
-6b \\
-4b                   
-\end{bmatrix}   </pre></div>
-<p>combining these into a single vector we get our result vector:</p>
-<div class="math"><pre>\begin{bmatrix}
-3a + 6b \\
-2a + 4b                 
-\end{bmatrix}</pre></div>
-<p>This multi-step proccess is more commonly described as matrix multiplication. However,
-matrix multiplication isn&#x27;t as simple as scalar multiplication, so you can&#x27;t just multiply
-the corresponding components. We won&#x27;t get into the details of matrix multiplication, but for
-more info on linear algebra and to get a much better visual representation of what has
-been explained in this article, We suggest watching <a href="https://youtu.be/fNk_zzaMoSs?si=iBkvwhzAhbwECNF0" target="_blank">this video series <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></g></svg></a> on youtube.</p>
+<p>After you have some sort of detection using <doc-anchor-trigger to="#inrange-and-bitwise-functions">inrange functions</doc-anchor-trigger>, you may start to notice two issues:</p>
+<ol>
+<li>It is almost impossible to detect <strong>only</strong> a specific element using only inrange functions.</li>
+<li>When you do have the object fully detected, <em>there is a lot of <strong>noise</strong></em></li>
+</ol>
+<p>Fortunately, OpenCV has two functions that help us mitigate these problems. These functions are <code v-pre>cv2.dilate()</code> and <code v-pre>cv2.erode()</code>. These two methods will help get rid of small, unwanted detections, without scaling down the size of the desired detection. In order to get rid of noise, we use <strong>erode</strong> to remove detected pixels without a significant amount of other detected pixels around them. This will shrink the desired detection, so we use <strong>dilate</strong> to restore it to its original size. You may also do this in reverse order to get ride of &quot;holes&quot; in the detection.</p>
+<hr>
+<p>Both <code v-pre>cv2.erode()</code> and <code v-pre>cv2.dilate()</code> will take in three arguments:</p>
+<ol>
+<li>The base image</li>
+<li>The <strong>kernel</strong> (this is a matrix filled with ones, to determine the buffer used for erosion and dilation)</li>
+<li>The amount of iterations</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>When instantiating a kernel, it must be of odd size - (3, 5, 7)</p>
+        </div>
+    </div>
+</div>
+<p>Syntax: <code v-pre>cv2.erode(image, kernel, iterations=iterations)</code></p>
+<p>An example use case of erosion and dilation would be to first erode the image with a 3x3 kernel, for three iterations, and then reverse that with dilation:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">kernel = np.ones((3, 3))
+
+eroded_image = cv2.erode(image, kernel, iterations=3)
+dilated_image = cv2.dilate(eroded_image, kernel, iterations=3)</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -247,20 +269,20 @@ been explained in this article, We suggest watching <a href="https://youtu.be/fN
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../math/basic-trigonometry/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../opencv/intro-to-opencv/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Basic Trigonometry</span>
+                                                <span class="block mt-1">Intro to Open​CV</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../implementation/driver-camera/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../apriltags/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Driver Camera</span>
+                                                <span class="block mt-1">April​Tags</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -304,7 +326,7 @@ been explained in this article, We suggest watching <a href="https://youtu.be/fN
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Linear Algebra", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Color Detection", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 
