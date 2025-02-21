@@ -2,6 +2,9 @@
 label: Guide to Cameras
 order: 99
 icon: book
+authors:
+  - name: Luke Baur
+    avatar: https://www.thebluealliance.com/avatar/2025/frc3656.png
 ---
 # Cameras
 Cameras are the foundation of computer vision; without them, we wouldn't have 

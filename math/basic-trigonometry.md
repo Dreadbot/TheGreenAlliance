@@ -2,6 +2,9 @@
 label: Basic Trigonometry
 order: 90
 icon: diamond
+authors:
+  - name: Calvin Ophoff
+    avatar: https://www.thebluealliance.com/avatar/2025/frc3656.png
 ---
 # Trigonometry
 

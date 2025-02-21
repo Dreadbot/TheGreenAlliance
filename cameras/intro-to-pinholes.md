@@ -2,6 +2,9 @@
 label: Pinholes
 order: 99
 icon: info
+authors:
+  - name: Calvin Ophoff
+    avatar: https://www.thebluealliance.com/avatar/2025/frc3656.png
 ---
 # Pinhole Cameras
 
@@ -33,7 +36,7 @@ core of our vision systems:
 
 ## Interpreting the Triangles
 
-Ok, so what the heck does that mean? This is a vertical side-view of a camera, 
+Ok, so what does that mean? This is a vertical side-view of a camera, 
 where the intersection of the two dashed lines is the pinhole of the camera. The
 section of the horizontal dashed line on the camera's side (labelled as **f**) 
 is the distance between the pinhole and the image plane.

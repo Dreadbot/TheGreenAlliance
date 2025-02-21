@@ -1,10 +1,13 @@
 ---
-label: OpenCV
+label: Intro to OpenCV
 order: 96
-icon: cpu
+icon: globe
+authors:
+  - name: Luke Baur
+    avatar: https://www.thebluealliance.com/avatar/2025/frc3656.png
 ---
 
-# What is OpenCV?
+# OpenCV
 OpenCV (Computer Vision) is a programming library that can help us achieve
 our goals when it comes to computer vision. As the name says, OpenCV
 is fully open source, and it handles much of the base level work with
@@ -30,9 +33,7 @@ Keep in mind, this is not saying anytime we use an OpenCV function in the file, 
 
 There is no need to go looking too far into the docs, as we will show how to program any concepts we mention, but don't be afraid to look. The most important capabilities we will need OpenCV for are capturing video, changing [camera properties](/cameras/guide-to-cameras/#camera-properties), and inrange functions.
 
-## General Usage
-
-==- **[Capturing Video]()**
+## Capturing Video
 Capturing video from a camera is extremely easy with opencv, granted you're on your [Raspberry Pi](/raspi).
 OpenCV simply has two functions for these capabilities: `cv2.VideoCapture()` and `VideoCapture.read()`. With
 these two functions, you'll be able to get the image from your camera every frame. First, you must create a
@@ -46,9 +47,8 @@ function, we need to call it on a VideoCapture object, like we just created. Now
 while True:
     ret, frame = cap.read()
 ```
-==-
 
-==- **[Showing Video]()**
+## Showing Video
 If you have a monitor or screen and would like to view the image that your camera captured, you can use the `cv2.imshow()` function. For this function, you'll need to pass in a string for the name of the window (this does not matter unless you are showing multiple cameras), as well as the frame you would like to show. To add this to your program you would need a line like this inside the while loop:
 ```py
 cv2.imshow("frame", frame)
@@ -91,9 +91,8 @@ cv2.waitKey(0)
 ```
 
 This usage of waitKey is much less valuable for our testing purposes, so you should stick with displaying an image for 1ms when testing your cameras or your code.
-==-
 
-==- **[Changing Properties]()**
+## Changing Properties
 After you know how to [capture video](#capturing-video), you can fiddle around with your [camera properties](/cameras/guide-to-cameras/#camera-properties). Changing properties in OpenCV requires knowing a few things about you camera. You must know your camera's auto exposure setting (`auto_exposure`), as well as the minimum exposure time (`exposure_time_absolute`). 
 
 To find these, run `v4l2-ctl -d /dev/video<X> -L` with `<X>` replaced with your camera. Typically this will be `video0`, but if you have multiple cameras you will have to determine which one is which. This command will give you an output of all of your changable camera properties, as well as their minimum, maximum, and default values. If a property has different modes specified by the number, it will list which number corresponds to which setting.
@@ -108,66 +107,4 @@ cap.set(cv2.CAP_PROP_PROPERTY, val)
 !!!
 If you would like to change the exposure time of your camera, you need to ***first*** change the auto exposure setting to manual. Otherwise, the value will not be changed.
 !!!
-==-
-
-## Object Detection
-
-==- **[Inrange and Bitwise Functions]()**
-Some of the most basic yet essential functions in OpenCV are the inrange and bitwise functions. These work as follows:
-
----
-`cv2.inRange(src, lower_bound, upper_bound)` - This function will take every single pixel of the specified source image (`src`) and calculate whether or not it exists within a specified range (`lower_bound`-`upper_bound`) with the bounds acting as allowed ranges for each color value. This will return a binary image with the 1s, or white pixels representing the pixels that fall within that range. This is most useful when used with an HSV color format. Here is an example use case of `cv2.inRange` that keeps all bright cyan pixels:
-```py
-lower_bound = np.array([75, 55, 10])
-upper_bound = np.array([90, 255, 255])
-
-blue_frame = cv2.inRange(hsv_frame, lower_bound, upper_bound)
-```
-
----
-
-For each of these next functions, they all follow the same pattern of logic using boolean operators. Each one corresponds to their boolean operator and will take one or two images and return the boolean operator output of them combined. This should be done on binary images unless you are masking them.
-
-`cv2.bitwise_and(img_1, img_2, *mask)` - Returns the boolean AND of the images.
-
-`cv2.bitwise_or(img_1, img_2, *mask)` - Returns the boolean OR of the images.
-
-`cv2.bitwise_xor(img_1, img_2, *mask)` - Returns the boolean XOR of the images.
-
-`cv2.bitwise_not(img_1, *mask)` - Returns the boolean NOT of an image.
-
-!!!
-Each of these functions allows you to pass in a `mask`. This will allow you to pass in a binary image as a mask, to determine which pixels of the image will be kept, and which ones are removed regardless.
-!!!
-==-
-
-==- **[Dilation and Erosion]()**
-After you have some sort of detection using [inrange functions](#object-detection), you may start to notice two issues:
-
-1. It is almost impossible to detect **only** a specific element using only inrange functions.
-2. When you do have the object fully detected, *there is a lot of **noise***
-
-Fortunately, OpenCV has two functions that help us mitigate these problems. These functions are `cv2.dilate()` and `cv2.erode()`. These two methods will help get rid of small, unwanted detections, without scaling down the size of the desired detection. In order to get rid of noise, we use **erode** to remove detected pixels without a significant amount of other detected pixels around them. This will shrink the desired detection, so we use **dilate** to restore it to its original size. You may also do this in reverse order to get ride of "holes" in the detection.
-
----
-Both `cv2.erode()` and `cv2.dilate()` will take in three arguments:
-
-1. The base image
-2. The **kernel** (this is a matrix filled with ones, to determine the buffer used for erosion and dilation)
-3. The amount of iterations
-
-!!!
-When instantiating a kernel, it must be of odd size - (3, 5, 7)
-!!!
-
-Syntax: `cv2.erode(image, kernel, iterations=)
-
-An example use case of erosion and dilation would be to first erode the image with a 3x3 kernel, for three iterations, and then reverse that with dilation:
-```py
-kernel = np.ones((3, 3))
-
-eroded_image = cv2.erode(image, kernel, iterations=3)
-dilated_image = cv2.dilate(eroded_image, kernel, iterations=3)
-```
-==-
 

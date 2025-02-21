@@ -1,5 +1,6 @@
+/*73d425*/
 .dark a {
-  color: #73d425 !important;
+  color: #73d465 !important;
 }
 a {
   color: #178d01 !important;
@@ -7,6 +8,7 @@ a {
 .dark a:hover {
   color: #a3ff69 !important;
 }
+/*a3ff69*/
 a:hover {
   color: #125f10 !important;
 }

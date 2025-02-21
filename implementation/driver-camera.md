@@ -2,6 +2,9 @@
 label: Driver Camera
 order: 90
 icon: device-camera
+authors:
+  - name: Calvin Ophoff
+    avatar: https://www.thebluealliance.com/avatar/2025/frc3656.png
 ---
 # Driver Camera
 The simplest useful kind of vision program is one which just pushes an image to
@@ -11,7 +14,7 @@ simply run:
 ```
 pip install mjpeg-streamer
 ```
-You'll also need [OpenCV](/opencv).
+You'll also need [OpenCV](/opencv/intro-to-opencv).
 Then, the minimally functional program is:
 
 ```py
@@ -105,6 +108,3 @@ The `try`/`except KeyboardInterrupt` will run `main()`, which loops until
 it receives an exception, including a `KeyboardInterrupt` event (you
 pressing `^C`). By `except`ing and `pass`ing, we can "gracefully" catch the
 `KeyboardInterrupt` and end the program from there.
-
-Congratulations, you just wrote your first vision program! Next, we'll look
-into detecting AprilTags, the new standard for marking FIRST fields.

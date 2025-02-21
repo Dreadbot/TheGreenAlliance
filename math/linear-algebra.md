@@ -2,6 +2,9 @@
 label: Linear Algebra
 order: 01
 icon: workflow
+authors:
+    name: Arman Buyukbozkirlii
+    avatar: https://www.thebluealliance.com/avatar/2025/frc3656.png
 ---
 
 # Linear Algebra
@@ -10,7 +13,7 @@ Linear Algebra is an important tool that we use to help find the position of the
 
 ## Vectors
 
-Vectors are used to represent a direction and magnitude. Usually they are graphically denoted by an arrow: the length represents the magnitude of the arrow and the starting and ending points represent the direction. On paper they are represent with square brackets [ ] with numbers vertically stacked. The top represents the x direction, below that is the y, and in 3 dimensions their will be z below that. 
+Vectors are used to represent a direction and magnitude. Usually they are graphically denoted by an arrow: the length represents the magnitude of the arrow and the starting and ending points represent the direction. On paper they are represented with square brackets [ ] with numbers vertically stacked. The top represents the x direction, below that is the y, and in 3 dimensions their will be z below that. 
 $$
 \begin{bmatrix}
 10 \\

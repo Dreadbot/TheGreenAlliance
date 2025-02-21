@@ -2,10 +2,10 @@
 label: AprilTags
 order: 95
 icon: apps
+authors:
+  - name: Luke Baur
+    avatar: https://www.thebluealliance.com/avatar/2025/frc3656.png
 ---
-!!!warning
-This section is a stub! Look out for more in a future update.
-!!!
 
 # AprilTags
 
