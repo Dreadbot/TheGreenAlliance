@@ -26,7 +26,7 @@ in case you would like to add an article. [More information on contributing :ico
 - [ ] Examples and GIFs
 - [ ] Raspberry Pi Guide
 - [ ] PnP Localization
-- [ ] ChAruCo Calibration
+- [ ] ChArUco Calibration
 - [ ] Installation Guides
 - [ ] Network Tables
 +++ Contributors :icon-people:
